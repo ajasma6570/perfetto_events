@@ -5,10 +5,10 @@ export default function Navbar() {
     <div className="relative z-10 flex justify-between w-full p-5 items-center">
       <ul>
         <li>
-          <img src="/images/logo.webp" alt="Logo" width={170} height={80} />
+          <img src="/images/logo.webp" alt="Logo" width={205} height={69} />
         </li>
       </ul>
-      <ul className="flex text-white space-x-12 text-lg items-center">
+      <ul className="flex text-white space-x-12 text-xl items-center">
         <li className="hover:text-red-700 tracking-tight cursor-pointer">
           Home
         </li>
@@ -25,7 +25,7 @@ export default function Navbar() {
           Blog
         </li>
         <li>
-          <button className="py-2 px-6 border rounded-3xl cursor-pointer tracking-tight">
+          <button className="py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight">
             Contact Us
           </button>
         </li>

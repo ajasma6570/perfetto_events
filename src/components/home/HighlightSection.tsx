@@ -1,0 +1,123 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+export default function HighlightSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [translate, setTranslate] = useState(0);
+  const [direction, setDirection] = useState(-1);
+  const [maxScroll, setMaxScroll] = useState(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      const parentWidth = container.parentElement?.offsetWidth || 0;
+      setMaxScroll(container.scrollWidth - parentWidth);
+    }
+  }, []);
+
+  useEffect(() => {
+    let frame: number;
+    const speed = 1.5;
+
+    const animate = () => {
+      setTranslate((prev) => {
+        let next = prev + direction * speed;
+
+        if (next <= -maxScroll) {
+          setDirection(1);
+          next = -maxScroll;
+        } else if (next >= 0) {
+          setDirection(-1);
+          next = 0;
+        }
+        return next;
+      });
+
+      frame = requestAnimationFrame(animate);
+    };
+
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [direction, maxScroll]);
+
+  const images = [
+    { src: "vector-4.webp", width: 600, height: 700 },
+    { src: "vector-5.webp", width: 900, height: 700 },
+    { src: "vector-6.webp", width: 600, height: 700 },
+    { src: "vector-7.webp", width: 900, height: 700 },
+  ];
+
+  return (
+    <section className="pb-20 bg-white">
+      <div className="pl-36 space-y-8">
+        <p
+          className={cn(
+            " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
+            manrope.className
+          )}
+        >
+          <span>
+            <Image
+              src="/images/logo-inline.webp"
+              alt="Logo"
+              width={16}
+              height={16}
+            />
+          </span>
+          Gallery
+        </p>
+        <p className="text-[55px] font-medium text-[#00325B]">
+          Highlights From Our Creations
+        </p>
+        <p
+          className={cn(
+            "text-2xl font-medium text-[#4B5563] w-xl",
+            manrope.className
+          )}
+        >
+          See how ideas turn into unforgettable experiences through our event
+          showcase.
+        </p>
+
+        <div className="w-full overflow-hidden mt-20">
+          <div
+            ref={containerRef}
+            className="flex gap-4"
+            style={{
+              transform: `translateX(${translate}px)`,
+              transition: "transform 0.05s linear",
+            }}
+          >
+            {images.map((item, i) => (
+              <div
+                key={i}
+                className="relative h-[700px] w-auto flex-shrink-0 overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={`/images/home/${item.src}`}
+                  alt={`Gallery ${i + 1}`}
+                  height={item.height}
+                  width={item.width}
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+          See the Moments
+        </button>
+      </div>
+    </section>
+  );
+}

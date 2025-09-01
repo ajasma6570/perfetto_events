@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+@layer utilities {
+  @keyframes loop-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-loop-scroll {
+    animation: loop-scroll 40s linear infinite;
+  }
+}
