@@ -1,35 +1,146 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { IoMenu, IoClose } from "react-icons/io5";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const routes = [
+    { name: "Home", path: "/" },
+    { name: "What We Do", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Blog", path: "/blog" },
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="relative z-10 flex justify-between w-full p-5 items-center">
-      <ul>
-        <li>
-          <img src="/images/logo.webp" alt="Logo" width={205} height={69} />
-        </li>
-      </ul>
-      <ul className="flex text-white space-x-12 text-xl items-center">
-        <li className="hover:text-red-700 tracking-tight cursor-pointer">
-          Home
-        </li>
-        <li className="hover:text-red-700 tracking-tight cursor-pointer">
-          What we Do
-        </li>
-        <li className="hover:text-red-700 tracking-tight cursor-pointer">
-          About Us
-        </li>
-        <li className="hover:text-red-700 tracking-tight cursor-pointer">
-          Gallery
-        </li>
-        <li className="hover:text-red-700 tracking-tight cursor-pointer">
-          Blog
-        </li>
-        <li>
-          <button className="py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight">
-            Contact Us
-          </button>
-        </li>
-      </ul>
+    <div className="absolute z-50 top-0 left-0 w-full bg-transparent">
+      <div className="max-w-[102rem] mx-auto flex justify-between items-center px-5 sm:px-6 py-5">
+        <ul>
+          <li>
+            <div className="relative w-[180px] lg:w-[200px] xl:w-[205px] h-[69px]">
+              <Image
+                src="/images/logo.webp"
+                alt="Logo"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+          </li>
+        </ul>
+
+        <ul className="text-white md:space-x-5 xl:space-x-12 md:text-md lg:text-lg xl:text-xl items-center hidden md:flex">
+          {routes.map((route) => {
+            const isActive = pathname === route.path;
+
+            return (
+              <li
+                key={route.name}
+                className={cn(
+                  "tracking-tight cursor-pointer transition-colors duration-300",
+                  {
+                    "text-red-700": isActive,
+                    "text-white hover:text-red-700":
+                      !isActive && pathname === "/",
+                    "text-[#00325B] hover:text-red-700":
+                      !isActive && pathname !== "/",
+                  }
+                )}
+              >
+                <Link href={route.path}>{route.name}</Link>
+              </li>
+            );
+          })}
+
+          <li>
+            <Link href="/contact">
+              <button className="py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+                Contact Us
+              </button>
+            </Link>
+          </li>
+        </ul>
+
+        <button
+          className="text-[#00325B] md:hidden z-30"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <IoClose size={40} /> : <IoMenu size={40} />}
+        </button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ y: "-80%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-80%", opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="fixed inset-0 bg-[#174880] flex flex-col justify-center items-center text-white space-y-6 text-3xl"
+            >
+              <ul className="space-y-6 text-center">
+                {routes.map((route) => (
+                  <li
+                    key={route.name}
+                    className={cn("cursor-pointer", {
+                      "text-red-700": pathname === route.path,
+                    })}
+                  >
+                    <Link href={route.path}>{route.name}</Link>
+                  </li>
+                ))}
+
+                <li>
+                  <Link href="/contact">
+                    <button className="py-3 px-6 text-3xl border rounded-3xl">
+                      Contact Us
+                    </button>
+                  </Link>
+                </li>
+              </ul>
+
+              <div className="flex space-x-6 mt-8">
+                <a href="#" className="border p-3 rounded-full">
+                  <FaInstagram size={18} />
+                </a>
+                <a href="#" className="border p-3 rounded-full">
+                  <FaFacebookF size={18} />
+                </a>
+                <a href="#" className="border p-3 rounded-full">
+                  <FaXTwitter size={18} />
+                </a>
+                <a href="#" className="border p-3 rounded-full">
+                  <FaLinkedinIn size={18} />
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

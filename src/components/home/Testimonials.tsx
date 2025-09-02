@@ -12,18 +12,18 @@ const manrope = Manrope({
 export default function Testimonials() {
   const testimonials = [
     {
-      img: "/images/testimonial/client-img.webp",
+      img: "/images/home/testimonial/client-img.webp",
       quote:
         "Our wedding was beyond magical. The Perfetto team handled everything with such precision and care that we were able to just live the moment. Truly unforgettable!",
-      clientImg: "/images/testimonial/client.webp",
+      clientImg: "/images/home/testimonial/client.webp",
       name: "Nisha & Arjun",
       company: "Newlyweds",
     },
     {
-      img: "/images/testimonial/client-img-1.webp",
+      img: "/images/home/testimonial/client-img-1.webp",
       quote:
         "Perfetto turned what could have been a stressful international conference into a seamless experience. Every detail from logistics to delegate management was flawless.",
-      clientImg: "/images/testimonial/client-1.webp",
+      clientImg: "/images/home/testimonial/client-1.webp",
       name: "Amit Rao, Director",
       company: "GlobalTech Solutions",
     },

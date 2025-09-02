@@ -16,6 +16,7 @@ export default function ClientsShowcase() {
     "image-11.webp",
     "image-12.webp",
     "image-13.webp",
+    "image-14.webp",
   ];
   return (
     <section className="h-[300px] w-full overflow-hidden relative bg-white py-12">
@@ -26,7 +27,7 @@ export default function ClientsShowcase() {
             className="flex-shrink-0 w-[130px] h-[130px] relative"
           >
             <Image
-              src={`/images/clients/${client}`}
+              src={`/images/home/clients/${client}`}
               alt={`Client ${index + 1}`}
               height={130}
               width={130}

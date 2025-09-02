@@ -23,7 +23,6 @@ export default function page() {
       <HighlightSection />
       <BlogSection />
       <GetInTouch />
-      <Footer />
     </main>
   );
 }

@@ -10,26 +10,27 @@ export default function CompanyOverview() {
 
   return (
     <section
-      className={`h-full py-20 transition-colors duration-500  ${
+      className={`h-full py-20 transition-colors duration-500  px-5 sm:px-6 ${
         hovered ? "bg-[#001A2E]" : "bg-white"
       }`}
     >
-      <p
-        className={`w-6xl mx-auto text-[55px] leading-snug font-medium text-center transition-colors duration-500 ${
+      <h2
+        className={`xl:w-6xl mx-auto text-3xl md:text-4xl xl:text-[55px] leading-snug font-medium text-center transition-colors duration-500 ${
           hovered ? "text-white" : "text-[#00325B]"
         }`}
       >
-        From grand launches to gatherings, <br />
+        From grand launches to gatherings, <br className="hidden md:block" />
         Perfetto{" "}
         <span className="inline-flex items-center justify-center">
           <img src="/images/logo-inline.webp" alt="" width={20} height={20} />
         </span>{" "}
         crafts events that inspire action,
-        <br /> build loyalty, and transform your vision into <br />
+        <br className="hidden md:block" /> build loyalty, and transform your
+        vision into <br className="hidden md:block" />
         unforgettable experiences.
-      </p>
+      </h2>
 
-      <div className="w-[102rem] mx-auto  mt-20 relative">
+      <div className="w-full max-w-[102rem] mx-auto  mt-20 relative">
         <Image
           src={
             hovered ? "/images/home/vector-1.webp" : "/images/home/vector.webp"
@@ -37,6 +38,19 @@ export default function CompanyOverview() {
           alt="Victor"
           width={1700}
           height={513}
+          className="hidden md:block"
+        />
+
+        <Image
+          src={
+            hovered
+              ? "/images/home/vector-1.webp"
+              : "/images/home/vector-sm.webp"
+          }
+          alt="Victor"
+          width={1700}
+          height={513}
+          className=" md:hidden"
         />
         <AnimatePresence mode="wait">
           <motion.div
@@ -64,10 +78,10 @@ export default function CompanyOverview() {
         </AnimatePresence>
       </div>
 
-      <div className="flex w-[102rem] mx-auto mt-20">
+      <div className="flex md:flex-row flex-col w-full max-w-[102rem] mx-auto mt-20 space-y-8 md:space-y-0">
         <ul
           className={cn(
-            "w-1/2 text-4xl space-y-4 font-medium",
+            "w-full gap-8 lg:w-1/2 text-3xl md:text-4xl md:space-y-4 font-medium flex flex-row md:flex-col md:justify-start md:items-start justify-center items-center",
             hovered ? "text-white" : "text-[#00325B]"
           )}
         >
@@ -78,10 +92,10 @@ export default function CompanyOverview() {
             <span className="font-bold">600+</span> Events
           </li>
         </ul>
-        <ul className="w-1/2 space-y-10">
+        <ul className="w-full flex md:justify-start md:items-start justify-center flex-col items-center md:w-1/2 space-y-10">
           <li
             className={cn(
-              "text-xl",
+              "text-2xl",
               hovered ? "text-[#476794]" : "text-[#4B5563]"
             )}
           >
@@ -95,7 +109,7 @@ export default function CompanyOverview() {
           <li>
             <button
               className={cn(
-                " border  py-5 px-7 rounded-full font-medium text-xl",
+                " border  py-5 px-7 rounded-full font-medium text-xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300",
                 hovered
                   ? "bg-[#001A2E] text-white"
                   : "text-[#001A2E] border-[#F7931E]"
