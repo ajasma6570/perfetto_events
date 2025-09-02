@@ -9,7 +9,6 @@ import Testimonials from "@/components/home/Testimonials";
 import HighlightSection from "@/components/home/HighlightSection";
 import BlogSection from "@/components/home/BlogSection";
 import GetInTouch from "@/components/home/GetInTouch";
-import Footer from "@/components/Footer";
 
 export default function page() {
   return (

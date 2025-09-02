@@ -79,7 +79,21 @@ export default function Navbar() {
 
           <li>
             <Link href="/contact">
-              <button className="py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+              <button
+                className={cn(
+                  "py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight transition-all duration-300",
+                  {
+                    "text-red-700 border-red-700 hover:bg-[#C4161C] hover:text-white":
+                      pathname === "/contact",
+
+                    "text-white border-white hover:border-red-700 hover:bg-[#C4161C]":
+                      pathname === "/",
+
+                    "text-[#00325B] border-[#00325B] hover:border-[#C4161C] hover:bg-[#C4161C] hover:text-white":
+                      pathname !== "/" && pathname !== "/contact",
+                  }
+                )}
+              >
                 Contact Us
               </button>
             </Link>
