@@ -67,7 +67,7 @@ export default function BlogSection() {
                 fill
                 className="object-cover hover:scale-110 transform transition-all duration-500 ease-in-out"
               />
-              <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-red-500/40 to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
 
             <p className="text-[28px] font-medium text-[#001A2E] pr-10">

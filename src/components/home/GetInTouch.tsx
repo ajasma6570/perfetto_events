@@ -4,7 +4,7 @@ import React from "react";
 
 export default function GetInTouch() {
   return (
-    <section className="relative h-[570px]">
+    <section className="relative h-[570px] ">
       <Image
         src="/images/home/event-4.webp"
         alt="Background"
@@ -13,7 +13,7 @@ export default function GetInTouch() {
         className="object-cover object-center"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center px-4 lg:px-6">
         <div className="w-[102rem]">
           <p className="text-[55px] font-medium text-white w-lg leading-tight">
             Plan your next event with us.

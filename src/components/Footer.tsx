@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
       <ul
         className={cn(
-          "flex justify-center space-x-10 text-xl font-medium",
+          "flex justify-center space-x-10 text-xl font-medium flex-wrap",
           manrope
         )}
       >

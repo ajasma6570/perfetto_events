@@ -150,7 +150,7 @@ export default function ServicesOverview() {
                   width={500}
                   className="object-cover rounded-xl h-[419px] group-hover:h-full w-full transform transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-700/90 to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <p className="absolute top-[450px] w-full lg:text-center text-3xl lg:text-4xl font-medium lg:px-8 group-hover:translate-y-[-20px] transform transition-all duration-500 group-hover:text-white">
                   {service.title}
                 </p>
