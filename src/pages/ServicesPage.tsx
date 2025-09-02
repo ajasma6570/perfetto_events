@@ -107,7 +107,7 @@ export default function servicesPage() {
     },
   ];
 
-  const [expanded, setExpanded] = useState(null);
+  const [expanded, setExpanded] = useState<number | null>(null);
 
   const permits = [
     {
