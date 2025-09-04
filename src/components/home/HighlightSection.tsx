@@ -57,38 +57,40 @@ export default function HighlightSection() {
   ];
 
   return (
-    <section className="pb-20 bg-white">
-      <div className="pl-36 space-y-8">
-        <p
-          className={cn(
-            " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
-            manrope.className
-          )}
-        >
-          <span>
-            <Image
-              src="/images/logo-inline.webp"
-              alt="Logo"
-              width={16}
-              height={16}
-            />
-          </span>
-          Gallery
-        </p>
-        <p className="text-[55px] font-medium text-[#00325B]">
-          Highlights From Our Creations
-        </p>
-        <p
-          className={cn(
-            "text-2xl font-medium text-[#4B5563] w-xl",
-            manrope.className
-          )}
-        >
-          See how ideas turn into unforgettable experiences through our event
-          showcase.
-        </p>
-
-        <div className="w-full overflow-hidden mt-20">
+    <section className="pb-20">
+      <div className="xl:pl-36">
+        <div className=" space-y-8 px-5 sm:px-6">
+          <p
+            className={cn(
+              " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
+              manrope.className
+            )}
+          >
+            <span>
+              <Image
+                src="/images/logo-inline.webp"
+                alt="Logo"
+                width={16}
+                height={16}
+              />
+            </span>
+            Gallery
+          </p>
+          <p className="text-4xl sm:text-3xl lg:text-5xl text-[#00325B] font-medium leading-tight">
+            Highlights From Our Creations
+          </p>
+          <p
+            className={cn(
+              "text-xl lg:text-2xl font-medium text-[#4B5563] ",
+              manrope.className
+            )}
+          >
+            See how ideas turn into unforgettable experiences{" "}
+            <br className="hidden lg:block" />
+            through our event showcase.
+          </p>
+        </div>
+        <div className="w-full overflow-hidden mt-20 px-5 sm:px-6">
           <div
             ref={containerRef}
             className="flex gap-4"
@@ -114,9 +116,11 @@ export default function HighlightSection() {
           </div>
         </div>
 
-        <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
-          See the Moments
-        </button>
+        <div className="px-5 sm:px-0">
+          <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+            See the Moments
+          </button>
+        </div>
       </div>
     </section>
   );

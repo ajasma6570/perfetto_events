@@ -10,19 +10,27 @@ export default function GetInTouch() {
         alt="Background"
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-center hidden lg:block"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center px-4 lg:px-6">
-        <div className="w-[102rem]">
-          <p className="text-[55px] font-medium text-white w-lg leading-tight">
-            Plan your next event with us.
+      <Image
+        src="/images/home/event-4-sm.webp"
+        alt="Background"
+        fill
+        priority
+        className="object-cover object-center lg:hidden"
+      />
+
+      <div className="absolute inset-0 flex items-end lg:items-center justify-center px-4 lg:px-6 py-10">
+        <div className="w-full max-w-[102rem] mx-auto">
+          <p className="text-5xl lg:text-[55px] font-medium text-white leading-tight">
+            Plan your next <br /> event with us.
           </p>
-          <div className="flex gap-6">
-            <button className="border  border-white text-white text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+          <div className="flex flex-col lg:flex-row lg:gap-6 items-start lg:items-center">
+            <button className="w-auto border border-white text-white text-base sm:text-lg lg:text-xl rounded-full px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-6 mt-6 lg:mt-12 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
               Book Your Free Consultation
-            </button>{" "}
-            <button className="border  border-white text-white text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+            </button>
+            <button className="w-auto border border-white text-white text-base sm:text-lg lg:text-xl rounded-full px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-6 mt-4 lg:mt-12 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
               Get in Touch
             </button>
           </div>

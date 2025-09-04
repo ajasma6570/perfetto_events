@@ -32,15 +32,23 @@ export default function WorkflowSection() {
     },
   ];
   return (
-    <section className="h-[700px] relative">
+    <section className="relative">
       <Image
         src="/images/home/vector-3.webp"
         alt="Background"
         fill
-        className="object-center"
+        priority
+        className="object-cover object-center md:block hidden"
+      />
+      <Image
+        src="/images/home/vector-3-sm.webp"
+        alt="Background"
+        fill
+        priority
+        className="object-cover object-center md:hidden block"
       />
 
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[102rem] space-y-8">
+      <div className="relative mx-auto max-w-[102rem] px-4 sm:px-6 py-16 sm:py-20">
         <p
           className={cn(
             " inline-flex justify-start items-center w-5/12 gap-2 text-xl uppercase text-white font-light",
@@ -57,22 +65,22 @@ export default function WorkflowSection() {
           </span>
           What we do
         </p>
-        <div className="flex justify-between">
+        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
           <p className="text-[55px] text-white font-medium">
             What Goes on Behind the Scenes
           </p>
-          <button className="border px-10 py-4 text-3xl rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] text-white border-white transform transition-all duration-300">
+          <button className="self-stretch xl:block hidden sm:self-auto border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-2xl rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
             Know the Process
           </button>
         </div>
 
-        <div className="flex justify-around mt-20">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {steps.map((item, index) => (
             <div
               key={index}
-              className="h-[298px] w-[301px] border border-white rounded-xl flex flex-col items-center justify-center space-y-4"
+              className="rounded-2xl border border-white group hover:border-white/10 hover:bg-white/10  hover:backdrop-blur-sm flex flex-col justify-center items-center text-center p-6 sm:p-7 min-h-[210px] sm:min-h-[298px] transform transition-all duration-300"
             >
-              <div className="h-[108px] w-[108px] border border-white rounded-full flex justify-center items-center text-6xl">
+              <div className="h-16 w-16 sm:h-20 sm:w-20 border group-hover:bg-[#F7A41E] group-hover:border-[#F7A41E] border-white rounded-full flex items-center justify-center transform transition-all duration-300">
                 <Image
                   src={`/images/icons/${item.src}`}
                   alt={`${item.title} Icon`}
@@ -80,10 +88,16 @@ export default function WorkflowSection() {
                   width={55}
                 />
               </div>
-              <p className="text-white font-medium text-[33px]">{item.title}</p>
+              <p className="mt-4 sm:mt-5 text-white font-medium text-xl sm:text-2xl">
+                {item.title}
+              </p>
             </div>
           ))}
         </div>
+
+        <button className="self-stretch mt-4 xl:hidden sm:self-auto border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-2xl rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
+          Know the Process
+        </button>
       </div>
     </section>
   );

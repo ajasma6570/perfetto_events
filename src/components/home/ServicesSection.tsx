@@ -90,7 +90,7 @@ export default function ServicesOverview() {
               delivering a flawless celebration.
             </p>{" "}
           </div>
-          <div className="mt-8 relative flex text-xl md:text-4xl font-medium gap-4">
+          <div className="mt-8 mb-10 md:mb-0 relative flex text-xl md:text-4xl font-medium gap-4">
             <span
               className="absolute bottom-0 h-12 lg:h-16 rounded-full border border-[#C4161C] transition-all duration-500"
               style={{
@@ -102,7 +102,7 @@ export default function ServicesOverview() {
             <button
               ref={eventManagementRef}
               className={cn(
-                "relative py-3 px-6 whitespace-nowrap cursor-pointer ",
+                "relative py-2 md:py-3 px-2 md:px-6 w-auto whitespace-nowrap cursor-pointer ",
                 selectedService === "event-management"
                   ? "text-black"
                   : "text-[#A6A6A6]"
@@ -115,7 +115,7 @@ export default function ServicesOverview() {
             <button
               ref={eventPermitsRef}
               className={cn(
-                "relative py-3 px-6 whitespace-nowrap cursor-pointer ",
+                "relative py-2 md:py-3 px-2 md:px-6 w-auto whitespace-nowrap cursor-pointer ",
                 selectedService === "event-permits"
                   ? "text-black"
                   : "text-[#A6A6A6]"
@@ -195,10 +195,10 @@ export default function ServicesOverview() {
             </p>
 
             <div className="flex lg:flex-row flex-col gap-4 text-lg lg:text-2xl">
-              <button className="border px-5 lg:px-10 py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transform transition-all duration-300">
+              <button className="w-auto border px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
                 Book Your Free Consultation
               </button>
-              <button className="border px-5 lg:px-10 py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transform transition-all duration-300">
+              <button className="w-auto border px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
                 Get in Touch
               </button>
             </div>

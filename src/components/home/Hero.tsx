@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Manrope } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Navbar from "../Navbar";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -34,7 +33,6 @@ export default function Hero() {
     return () => window.removeEventListener("resize", updateImages);
   }, []);
 
-  // Image slider
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -66,7 +64,7 @@ export default function Hero() {
       </AnimatePresence>
 
       <section className="relative z-20 flex flex-col min-h-screen max-w-[102rem] mx-auto px-5 sm:px-6">
-        <div className="flex flex-1 flex-col justify-center items-start md:items-center md:text-center w-full space-y-10 pt-20">
+        <div className="flex flex-1 flex-col justify-center items-start md:items-center md:text-center w-full space-y-10 pt-40 md:pt-20">
           <h1 className="text-[#FFA616] text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-semibold leading-tight flex flex-col">
             <span className="tracking-tighter  md:-translate-x-24 lg:-translate-x-30 xl:-translate-x-30 2xl:-translate-x-36">
               Crafting Experiences,
@@ -83,7 +81,7 @@ export default function Hero() {
               <p>From corporate summits to luxury weddings,</p>
               <p>Perfetto transforms your vision into reality.</p>
             </div>
-            <button className="whitespace-nowrap border py-4 px-6 rounded-full text-white border-white font-semibold text-lg backdrop-blur-[1px]">
+            <button className="whitespace-nowrap border py-4 px-6 rounded-full text-white border-white font-semibold text-lg backdrop-blur-[1px] hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
               Book your Free Consultation
             </button>
           </div>
