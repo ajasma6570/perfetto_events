@@ -190,11 +190,11 @@ export default function ServicesOverview() {
           />
 
           <div className="absolute inset-0 flex lg:flex-row flex-col items-center gap-10 w-full px-12 text-white py-10 lg:py-0">
-            <p className="text-5xl lg:text-[45px] font-medium">
+            <p className="text-5xl xl:text-[45px] font-medium">
               Have something on mind to discuss?
             </p>
 
-            <div className="flex lg:flex-row flex-col gap-4 text-lg lg:text-2xl">
+            <div className="flex lg:flex-row flex-col gap-4 text-lg xl:text-2xl">
               <button className="w-auto border px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
                 Book Your Free Consultation
               </button>

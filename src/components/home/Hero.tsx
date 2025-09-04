@@ -65,7 +65,7 @@ export default function Hero() {
 
       <section className="relative z-20 flex flex-col min-h-screen max-w-[102rem] mx-auto px-5 sm:px-6">
         <div className="flex flex-1 flex-col justify-center items-start md:items-center md:text-center w-full space-y-10 pt-40 md:pt-20">
-          <h1 className="text-[#FFA616] text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-semibold leading-tight flex flex-col">
+          <h1 className="text-[#FFA616] text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-semibold leading-tight flex flex-col">
             <span className="tracking-tighter  md:-translate-x-24 lg:-translate-x-30 xl:-translate-x-30 2xl:-translate-x-36">
               Crafting Experiences,
             </span>

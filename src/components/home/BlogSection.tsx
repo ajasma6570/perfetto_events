@@ -48,12 +48,12 @@ export default function BlogSection() {
           <span>Blog</span>
         </div>
 
-        <h2 className="text-5xl md:text-[55px] text-[#00325B] font-medium md:text-center md:-translate-y-12">
+        <h2 className="text-5xl lg:text-[55px] text-[#00325B] font-medium md:text-center lg:-translate-y-12">
           Event Trends, Tips & Stories
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-16 max-w-[102rem] mx-auto  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-14 lg:gap-16 max-w-[102rem] mx-auto  ">
         {blogs.map((item, index) => (
           <article key={index} className="space-y-4 px-4 sm:px-6">
             <p className={cn("text-[#4E4E4E] text-xl font-medium", manrope)}>
