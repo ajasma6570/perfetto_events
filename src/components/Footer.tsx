@@ -5,6 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaArrowUpLong, FaXTwitter } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 import { Manrope } from "next/font/google";
+import Link from "next/link";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,12 +24,24 @@ export default function Footer() {
           manrope
         )}
       >
-        <li className="hover:text-[#C4161C] cursor-pointer">Home</li>
-        <li className="hover:text-[#C4161C] cursor-pointer">About Us</li>
-        <li className="hover:text-[#C4161C] cursor-pointer">Our Services</li>
-        <li className="hover:text-[#C4161C] cursor-pointer">Blog</li>
-        <li className="hover:text-[#C4161C] cursor-pointer">Gallery</li>
-        <li className="hover:text-[#C4161C] cursor-pointer">Contact Us</li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/">Home</Link>
+        </li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/about">About Us</Link>
+        </li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/services">Our Services</Link>
+        </li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/blog">Blog</Link>
+        </li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/gallery">Gallery</Link>
+        </li>
+        <li className="hover:text-[#C4161C] cursor-pointer">
+          <Link href="/contact">Contact Us</Link>
+        </li>
       </ul>
 
       <ul className="flex justify-center space-x-10 text-xl">

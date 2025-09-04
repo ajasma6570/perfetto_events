@@ -42,15 +42,17 @@ export default function Navbar() {
       <div className="max-w-[102rem] mx-auto flex justify-between items-center px-5 sm:px-6 py-5">
         <ul>
           <li>
-            <div className="relative w-[180px] lg:w-[200px] xl:w-[205px] h-[69px]">
-              <Image
-                src="/images/logo.webp"
-                alt="Logo"
-                fill
-                priority
-                className="object-contain"
-              />
-            </div>
+            <Link href="/">
+              <div className="relative w-[180px] lg:w-[200px] xl:w-[205px] h-[69px]">
+                <Image
+                  src="/images/logo.webp"
+                  alt="Logo"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+            </Link>
           </li>
         </ul>
 
