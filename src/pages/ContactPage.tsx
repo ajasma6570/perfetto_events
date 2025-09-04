@@ -1,6 +1,12 @@
-import { cn } from "@/lib/utils";
+"use client";
+
+import ProcessSection from "@/components/ProcessSection";
 import { Manrope } from "next/font/google";
-import React from "react";
+import Image from "next/image";
+import React, { useState } from "react";
+import { BiChevronDown } from "react-icons/bi";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -8,26 +14,239 @@ const manrope = Manrope({
 });
 
 export default function ContactPage() {
+  const faqs = [
+    {
+      q: "Why is a DTCM event permit necessary?",
+      a: "In order to ensure compliance with local laws and regulations, and to guarantee the safety and well-being of all attendees, event organizers in Dubai must obtain a DTCM.",
+    },
+    {
+      q: "How do I obtain a DTCM event permit?",
+      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      q: "What information do I need to provide for the DTCM event permit application?",
+      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      q: "Can Perfetto Events assist with obtaining a DTCM event permit?",
+      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      q: "What happens if I do not obtain a DTCM event permit?",
+      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+  ];
+
+  const [faqOpen, setFaqOpen] = useState<number>(0);
   return (
-    <div className="pt-24 space-y-20">
-      <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto">
-        <p
-          className={cn(
-            "text-xl uppercase text-[#C4161C] font-light",
-            manrope.className
-          )}
-        >
-          our services
-        </p>
-        <p className="text-[55px] text-[#00325B] font-medium">
-          The Services Behind Every Great Event
-        </p>
-        <p className="text-2xl text-[#4B5563] font-medium">
-          Discover how we combine creativity, precision, and compliance to make
-          events unforgettable. Our full spectrum of services are crafted to
-          deliver impact, compliance, and unforgettable memories.
-        </p>
-      </div>
+    <div className="pt-24">
+      <section className="w-full bg-[#FAF8F5] max-w-[102rem] mx-auto mt-10">
+        <div className="mx-auto max-w-[102rem] h-[400px] flex p-20">
+          <div className="w-5/12 h-full">
+            <p className="inline-flex items-center gap-2 text-[#C4161C] uppercase text-[14px] tracking-[0.16em] font-light">
+              Contact us
+            </p>
+
+            <h2 className="mt-4 text-[#00325B] font-medium leading-[1.05] text-[55px]">
+              Ready to Plan
+              <br />
+              an Event ?
+            </h2>
+          </div>
+
+          <div className="w-7/12 h-full">
+            <p className="text-[#4B5563] font-medium text-xl leading-[1.65] max-w-[746px]">
+              Every great event starts with organized details while executing
+              them brilliantly, We offer a variety of options to assist in
+              making your event as perfect as you have imagined it!
+            </p>
+
+            <ul className="mt-8 flex gap-6">
+              {[
+                { Icon: FaInstagram, label: "Instagram" },
+                { Icon: FaFacebookF, label: "Facebook" },
+                { Icon: FaXTwitter, label: "X" },
+                { Icon: FaLinkedinIn, label: "LinkedIn" },
+              ].map(({ Icon, label }, i) => (
+                <li key={i}>
+                  <button
+                    aria-label={label}
+                    className="h-14 w-14 rounded-full border border-[#093b64] text-[#093b64] grid place-items-center text-[22px] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                  >
+                    <Icon />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>{" "}
+      <section className="w-full my-20">
+        <div className="mx-auto max-w-[102rem]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-24 gap-y-10">
+            <div>
+              <h3 className="text-[#00325B] text-[28px] font-medium">Phone</h3>
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+                <p>
+                  <a href="tel:+97143962335" className="hover:underline">
+                    +971-4-396-2335
+                  </a>
+                </p>
+                <p>
+                  <a href="tel:+971585060786" className="hover:underline">
+                    +971-58-5060-786
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[#00325B] text-[28px] font-medium">Email</h3>
+              <div className="mt-4 text-[#4B5563] text-[22px] font-normal">
+                <a
+                  href="mailto:events@perfettogroup.ae"
+                  className="hover:underline break-all"
+                >
+                  events@perfettogroup.ae
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[#00325B] text-[28px] font-medium">
+                Head Office
+              </h3>
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+                <p>Dubai Park Lane Towers</p>
+                <p>Office # 2013 Business Bay Dubai</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[#00325B] text-[28px] font-medium">
+                Branch Office
+              </h3>
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+                <p>Naressco 4 Building</p>
+                <p>Office # M05 Al Karama Dubai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full">
+        <div className="mx-auto max-w-[102rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[700px]">
+            <div className="h-full rounded-xl bg-[#D9D9D9] relative">
+              <Image
+                src="/images/contact/contact.webp"
+                fill
+                alt="contact.webp"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="rounded-xl bg-[#FBF8F4] p-10 lg:p-16 flex flex-col h-full  justify-center">
+              <h3 className="text-[#00325B] text-2xl lg:text-[35px] font-semibold ">
+                We’d love to hear from you
+              </h3>
+
+              <form className="mt-10 flex flex-col gap-8 ">
+                <label className="block">
+                  <input
+                    type="text"
+                    placeholder="First name*"
+                    className="w-full bg-transparent border-0 border-b border-[#CDD1D5] focus:border-[#00325B] focus:ring-0 py-3 text-[15px] placeholder:text-[#A3A8AE] outline-none"
+                  />
+                </label>
+
+                <label className="block">
+                  <input
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full bg-transparent border-0 border-b border-[#CDD1D5] focus:border-[#00325B] focus:ring-0 py-3 text-[15px] placeholder:text-[#A3A8AE] outline-none"
+                  />
+                </label>
+
+                <label className="block">
+                  <textarea
+                    rows={6}
+                    placeholder="Message*"
+                    className="w-full resize-none bg-transparent border-0 border-b border-[#CDD1D5] focus:border-[#00325B] focus:ring-0 py-3 text-[15px] placeholder:text-[#A3A8AE] outline-none"
+                  />
+                </label>
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className=" block h-16 px-10 rounded-full border border-[#F0A04B] text-[#00325B] text-3xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full mt-10 mb-20">
+        <div className="mx-auto max-w-[90rem] px-6 sm:px-8">
+          <h2 className="text-center text-[#00325B] text-[55px] font-semibold tracking-wide mb-12">
+            FAQ
+          </h2>
+
+          <ul className="space-y-6">
+            {faqs.map((item, i) => {
+              const isOpen = faqOpen === i;
+              return (
+                <li
+                  key={i}
+                  className={[
+                    "rounded-xl transition-colors",
+                    isOpen
+                      ? "bg-[#FAF8F5] border border-[#FAF8F5]"
+                      : "bg-white border border-[#FFE5BE]",
+                  ].join(" ")}
+                >
+                  <button
+                    onClick={() => setFaqOpen(isOpen ? -1 : i)}
+                    className="w-full flex items-center gap-4 px-7 py-6"
+                  >
+                    <span className="flex-1 text-left text-[#00325B] text-lg sm:text-[30px] font-medium">
+                      {item.q}
+                    </span>
+
+                    <span
+                      className={[
+                        "h-8 w-8 grid place-items-center rounded-full border border-[#F7931E] text-black shrink-0 transition-transform",
+                        isOpen ? "rotate-180" : "",
+                      ].join(" ")}
+                    >
+                      <BiChevronDown size={18} strokeWidth={2} />
+                    </span>
+                  </button>
+
+                  <div
+                    className={[
+                      "grid transition-[grid-template-rows] duration-300 ease-out",
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                    ].join(" ")}
+                  >
+                    <div className="overflow-hidden">
+                      {item.a && (
+                        <p className="px-7 pb-6 text-[22px] leading-tight text-[#4B5563]">
+                          {item.a}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+      <ProcessSection isContactPage={true} />
     </div>
   );
 }
