@@ -117,7 +117,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="hidden md:block mt-14">
+      <div className="hidden xl:block mt-14">
         <div className="mx-auto max-w-[102rem] px-6">
           <div className="grid grid-cols-3 gap-12 items-start">
             {/* Left image (current) */}
