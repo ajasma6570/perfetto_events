@@ -76,12 +76,12 @@ export default function Hero() {
 
           <div className="flex flex-col md:flex-row justify-center items-start md:items-center gap-10 md:gap-16 w-full">
             <div
-              className={`${manrope.className} text-lg md:text-lg lg:text-xl text-white font-medium space-y-2`}
+              className={`${manrope.className} text-lg md:text-lg lg:text-2xl text-white font-medium space-y-2`}
             >
               <p>From corporate summits to luxury weddings,</p>
               <p>Perfetto transforms your vision into reality.</p>
             </div>
-            <button className="whitespace-nowrap border py-4 px-6 rounded-full text-white border-white font-semibold text-lg backdrop-blur-[1px] hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+            <button className="whitespace-nowrap border w-auto p-5 rounded-full text-white border-white font-semibold  text-lg md:text-lg lg:text-2xl backdrop-blur-[1px] hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
               Book your Free Consultation
             </button>
           </div>

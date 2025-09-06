@@ -28,7 +28,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
         setIsOpen(false);
       }
     };
@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <div className="absolute z-50 top-0 left-0 w-full bg-transparent">
-      <div className="max-w-[102rem] mx-auto flex justify-between items-center px-5 sm:px-6 py-5">
+      <div className="max-w-[102rem] w-full mx-auto flex justify-between items-center px-5 sm:px-6 py-5">
         <ul>
           <li>
             <Link href="/">
@@ -56,7 +56,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <ul className="text-white md:space-x-5 xl:space-x-12 md:text-md lg:text-lg xl:text-xl items-center hidden md:flex">
+        <ul className="text-white md:space-x-5 xl:space-x-14 text-xl lg:text-lg xl:text-xl items-center hidden lg:flex">
           {routes.map((route) => {
             const isActive = pathname === route.path;
 
@@ -83,7 +83,7 @@ export default function Navbar() {
             <Link href="/contact">
               <button
                 className={cn(
-                  "py-3 px-6 text-xl border rounded-3xl cursor-pointer tracking-tight transition-all duration-300",
+                  "w-auto px-4 py-1 lg:px-6 lg:py-2.5 text-xl border rounded-3xl cursor-pointer tracking-tight transition-all duration-300",
                   {
                     "text-red-700 border-red-700 hover:bg-[#C4161C] hover:text-white":
                       pathname === "/contact",
@@ -103,7 +103,7 @@ export default function Navbar() {
         </ul>
 
         <button
-          className="text-[#00325B] md:hidden z-30"
+          className="text-[#00325B] lg:hidden z-30"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <IoClose size={40} /> : <IoMenu size={40} />}
@@ -126,12 +126,14 @@ export default function Navbar() {
                       "text-red-700": pathname === route.path,
                     })}
                   >
-                    <Link href={route.path}>{route.name}</Link>
+                    <Link href={route.path} onClick={() => setIsOpen(false)}>
+                      {route.name}
+                    </Link>
                   </li>
                 ))}
 
                 <li>
-                  <Link href="/contact">
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
                     <button className="py-3 px-6 text-3xl border rounded-3xl">
                       Contact Us
                     </button>

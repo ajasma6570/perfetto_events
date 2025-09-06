@@ -29,29 +29,33 @@ export default function Footer() {
       <nav aria-label="Footer" className="px-4 sm:px-6">
         <ul
           className={cn(
-            "grid grid-cols-3 gap-x-6 gap-y-4 text-base sm:text-lg md:text-xl font-medium",
+            "flex flex-col md:flex-row text-base space-y-6 md:space-y-0 sm:text-lg md:text-xl font-medium",
             "md:flex md:justify-center md:space-x-10",
             manrope.className
           )}
         >
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/">Home</Link>
-          </li>
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/about">About Us</Link>
-          </li>
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/services">Our Services</Link>
-          </li>
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/gallery">Gallery</Link>
-          </li>
-          <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-            <Link href="/contact">Contact Us</Link>
-          </li>
+          <ul className="flex justify-center gap-10">
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/about">About Us</Link>
+            </li>{" "}
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/services">Our Services</Link>
+            </li>
+          </ul>
+          <ul className="flex justify-center gap-10">
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/gallery">Gallery</Link>
+            </li>
+            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
+              <Link href="/contact">Contact Us</Link>
+            </li>
+          </ul>
         </ul>
       </nav>
 

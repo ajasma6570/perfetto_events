@@ -10,7 +10,7 @@ export default function CompanyOverview() {
 
   return (
     <section
-      className={`h-full py-20 transition-colors duration-500  px-5 sm:px-6 ${
+      className={`h-full pt-20 pb-10 transition-colors duration-500  px-5 sm:px-6 ${
         hovered ? "bg-[#001A2E]" : "bg-white"
       }`}
     >
@@ -81,7 +81,7 @@ export default function CompanyOverview() {
       <div className="flex md:flex-row flex-col w-full max-w-[102rem] mx-auto mt-20 space-y-8 md:space-y-0">
         <ul
           className={cn(
-            "w-full gap-8 lg:w-1/2 text-3xl md:text-4xl md:space-y-4 font-medium flex flex-row md:flex-col md:justify-start md:items-start justify-center items-center",
+            "w-full gap-8 md:w-4/12 lg:w-1/2 text-2xl sm:text-3xl md:text-4xl md:space-y-4 font-medium flex flex-row md:flex-col md:justify-start md:items-start justify-center items-center",
             hovered ? "text-white" : "text-[#00325B]"
           )}
         >
@@ -92,7 +92,7 @@ export default function CompanyOverview() {
             <span className="font-bold">600+</span> Events
           </li>
         </ul>
-        <ul className="w-full flex md:justify-start md:items-start justify-center flex-col items-center md:w-1/2 space-y-10">
+        <ul className="w-full flex md:justify-start md:items-start justify-center flex-col items-center md:w-8/12 lg:w-1/2 space-y-10">
           <li
             className={cn(
               "text-2xl",
@@ -109,7 +109,7 @@ export default function CompanyOverview() {
           <li>
             <button
               className={cn(
-                " border  py-5 px-7 rounded-full font-medium text-xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300",
+                " border w-auto py-5 px-8 rounded-full font-medium text-2xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300",
                 hovered
                   ? "bg-[#001A2E] text-white"
                   : "text-[#001A2E] border-[#F7931E]"

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { testimonials } from "@/static-data/home";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -10,25 +11,6 @@ const manrope = Manrope({
 });
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      img: "/images/home/testimonial/client-img.webp",
-      quote:
-        "Our wedding was beyond magical. The Perfetto team handled everything with such precision and care that we were able to just live the moment. Truly unforgettable!",
-      clientImg: "/images/home/testimonial/client.webp",
-      name: "Nisha & Arjun",
-      company: "Newlyweds",
-    },
-    {
-      img: "/images/home/testimonial/client-img-1.webp",
-      quote:
-        "Perfetto turned what could have been a stressful international conference into a seamless experience. Every detail from logistics to delegate management was flawless.",
-      clientImg: "/images/home/testimonial/client-1.webp",
-      name: "Amit Rao, Director",
-      company: "GlobalTech Solutions",
-    },
-  ];
-
   const [current, setCurrent] = useState(0);
   const nextIndex = (current + 1) % testimonials.length;
 

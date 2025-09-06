@@ -122,7 +122,7 @@ export default function servicesPage() {
     },
   ];
   return (
-    <div className="pt-24 space-y-20">
+    <div className="pt-24 px-4 lg:px-6 space-y-20">
       <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto">
         <p
           className={cn(
@@ -132,15 +132,16 @@ export default function servicesPage() {
         >
           our services
         </p>
-        <p className="text-[55px] text-[#00325B] font-medium">
+        <p className="text-5xl lg:text-6xl mb-10 lg:mb-5 text-[#00325B] font-medium">
           The Services Behind Every Great Event
         </p>
-        <p className="text-2xl text-[#4B5563] font-medium">
+        <p className="text-2xl text-[#4B5563] font-normal">
           Discover how we combine creativity, precision, and compliance to make
           events unforgettable. Our full spectrum of services are crafted to
           deliver impact, compliance, and unforgettable memories.
         </p>
       </div>
+
       <div className="mt-14 relative flex text-xl md:text-4xl font-medium gap-4 justify-center">
         <span
           className="absolute bottom-0 h-12 lg:h-16 rounded-full border border-[#C4161C] transition-all duration-500"
@@ -175,7 +176,7 @@ export default function servicesPage() {
         </button>
       </div>
 
-      <div
+      {/* <div
         ref={eventManagementSectionRef}
         className="w-full max-w-[102rem] mx-auto"
       >
@@ -188,8 +189,8 @@ export default function servicesPage() {
         />
 
         <div className="flex mt-20">
-          <div className="w-5/12"></div>
-          <div className="w-7/12 space-y-4 px-12">
+          <div className="w-full lg:w-5/12 hidden lg:block"></div>
+          <div className="w-full lg:w-7/12 space-y-4 px-12">
             <p className="text-[#00325B] font-medium text-[55px] leading-tight">
               Event <br /> Management
             </p>
@@ -202,7 +203,7 @@ export default function servicesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-28 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 mt-20">
           {eventManagemnet.map((event, index) => (
             <div key={index} className="space-y-4">
               <div className="relative group cursor-pointer overflow-hidden rounded-xl w-full h-[400px]">
@@ -222,7 +223,7 @@ export default function servicesPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between gap-4">
+              <div className="flex flex-col lg:flex-row justify-between gap-4">
                 <p className="w-5/12 text-[35px] font-medium text-[#00325B] pr-10">
                   {event.title}
                 </p>
@@ -248,9 +249,9 @@ export default function servicesPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         ref={eventPermitsSectionRef}
         className="w-full max-w-[102rem] mx-auto"
       >
@@ -327,7 +328,6 @@ export default function servicesPage() {
             </div>
           </div>
 
-          {/* Divider with OR */}
           <div className="flex items-center my-6">
             <div className="flex-grow border-t "></div>
             <span className="mx-4 text-xl font-medium">OR</span>
@@ -345,9 +345,9 @@ export default function servicesPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <ProcessSection />
+      {/* <ProcessSection /> */}
     </div>
   );
 }

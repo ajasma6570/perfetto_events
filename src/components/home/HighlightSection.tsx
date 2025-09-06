@@ -58,8 +58,8 @@ export default function HighlightSection() {
 
   return (
     <section className="pb-20">
-      <div className="xl:pl-36">
-        <div className=" space-y-8 px-5 sm:px-6">
+      <div className="">
+        <div className="max-w-[102rem] w-full mx-auto space-y-8 px-5 sm:px-6">
           <p
             className={cn(
               " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
@@ -90,36 +90,39 @@ export default function HighlightSection() {
             through our event showcase.
           </p>
         </div>
-        <div className="w-full overflow-hidden mt-20 px-5 sm:px-6">
-          <div
-            ref={containerRef}
-            className="flex gap-4"
-            style={{
-              transform: `translateX(${translate}px)`,
-              transition: "transform 0.05s linear",
-            }}
-          >
-            {images.map((item, i) => (
-              <div
-                key={i}
-                className="relative h-[700px] w-auto flex-shrink-0 overflow-hidden rounded-xl"
-              >
-                <Image
-                  src={`/images/home/${item.src}`}
-                  alt={`Gallery ${i + 1}`}
-                  height={item.height}
-                  width={item.width}
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="px-5 sm:px-0">
-          <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
-            See the Moments
-          </button>
+        <div className="w-full ml-auto max-w-[110.5rem] overflow-hidden lg:pl-6">
+          <div className="overflow-hidden mt-20 px-5 sm:px-6">
+            <div
+              ref={containerRef}
+              className="flex gap-4"
+              style={{
+                transform: `translateX(${translate}px)`,
+                transition: "transform 0.05s linear",
+              }}
+            >
+              {images.map((item, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[calc(1*3+1)/3] w-auto flex-shrink-0 overflow-hidden rounded-xl"
+                >
+                  <Image
+                    src={`/images/home/${item.src}`}
+                    alt={`Gallery ${i + 1}`}
+                    height={item.height}
+                    width={item.width}
+                    className="object-cover  "
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="px-4 lg:px-0">
+            <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+              See the Moments
+            </button>
+          </div>
         </div>
       </div>
     </section>

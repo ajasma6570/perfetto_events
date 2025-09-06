@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { workflowSteps } from "@/static-data/home";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React from "react";
@@ -9,28 +10,6 @@ const manrope = Manrope({
 });
 
 export default function WorkflowSection() {
-  const steps = [
-    {
-      title: "Briefing",
-      src: "icon.webp",
-    },
-    {
-      title: "Conceptualization",
-      src: "icon-2.webp",
-    },
-    {
-      title: "Planning",
-      src: "icon-3.webp",
-    },
-    {
-      title: "Execution",
-      src: "icon-4.webp",
-    },
-    {
-      title: "Evaluation",
-      src: "icon-5.webp",
-    },
-  ];
   return (
     <section className="relative">
       <Image
@@ -75,7 +54,7 @@ export default function WorkflowSection() {
         </div>
 
         <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
-          {steps.map((item, index) => (
+          {workflowSteps.map((item, index) => (
             <div
               key={index}
               className="rounded-2xl border border-white group hover:border-white/10 hover:bg-white/10  hover:backdrop-blur-sm flex flex-col justify-center items-center text-center p-6 sm:p-7 min-h-[210px] sm:min-h-[298px] transform transition-all duration-300"
