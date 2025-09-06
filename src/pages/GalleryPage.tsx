@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 
 const manrope = Manrope({
@@ -145,7 +145,7 @@ export default function GalleryPage() {
 
   return (
     <div className="pt-24 space-y-20 ">
-      <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto">
+      <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto px-6">
         <p
           className={cn(
             "text-xl uppercase text-[#C4161C] font-light",
@@ -154,7 +154,7 @@ export default function GalleryPage() {
         >
           gallery
         </p>
-        <h1 className="text-[55px] text-[#00325B] font-medium">
+        <h1 className="text-5xl lg:text-6xl text-[#00325B] font-medium">
           Gallery of Work
         </h1>
         <p className="text-2xl text-[#4B5563] font-medium">
@@ -163,14 +163,14 @@ export default function GalleryPage() {
         </p>
       </div>
 
-      <div className="mt-20 w-full max-w-[102rem] mx-auto px-4 lg:px-6">
-        <div className="flex justify-center gap-1 flex-wrap">
+      <div className="mt-20 w-full max-w-[102rem] mx-auto  px-6">
+        <div className="flex justify-start lg:justify-center gap-1 overflow-x-auto space-x-5">
           {tabs.map((tab) => (
             <button
               key={tab.value}
               onClick={() => setSelectedTab(tab.value)}
               className={cn(
-                "px-5 py-1  border hover:border-[#C4161C] rounded-full text-xl cursor-pointer",
+                "px-5 border hover:border-[#C4161C] rounded-full text-xl cursor-pointer whitespace-nowrap transition-all duration-300",
                 selectedTab === tab.value
                   ? "border-[#C4161C]"
                   : "border-transparent"
@@ -188,7 +188,7 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 pb-14"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 pb-14"
           >
             {filteredGallery.map((item, idx) => (
               <div
@@ -201,8 +201,10 @@ export default function GalleryPage() {
                   alt={item.title}
                   fill
                   loading="lazy"
-                  className="object-cover hover:scale-110 transform transition-all duration-500 ease-in-out"
+                  className="object-fill transform transition-all duration-500 ease-in-out group-hover:scale-110"
+                  sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
                 />
+
                 <div className="absolute bottom-0 gap-2 left-0 w-full h-[50%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-start justify-end px-5 pb-8">
                   <p className="text-white rounded-full  text-lg font-medium">
                     {item.type}
