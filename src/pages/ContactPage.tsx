@@ -40,53 +40,55 @@ export default function ContactPage() {
   const [faqOpen, setFaqOpen] = useState<number>(0);
   return (
     <div className="pt-24">
-      <section className="w-full bg-[#FAF8F5] max-w-[102rem] mx-auto mt-10">
-        <div className="mx-auto max-w-[102rem] h-[400px] flex p-20">
-          <div className="w-5/12 h-full">
-            <p className="inline-flex items-center gap-2 text-[#C4161C] uppercase text-[14px] tracking-[0.16em] font-light">
-              Contact us
-            </p>
+      <section className="w-full ">
+        <div className="max-w-[102rem] mx-auto px-5 sm:px-6 py-8 lg:py-10 bg-[#FAF8F5]">
+          <div className="flex flex-col gap-6 lg:flex-row items-center lg:items-stretch rounded-2x p-6 sm:p-8 lg:p-20">
+            <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
+              <p className="inline-flex items-center gap-2 text-[#C4161C] uppercase text-[14px] tracking-[0.16em] font-light">
+                Contact us
+              </p>
 
-            <h2 className="mt-4 text-[#00325B] font-medium leading-[1.05] text-[55px]">
-              Ready to Plan
-              <br />
-              an Event ?
-            </h2>
-          </div>
+              <h2 className="mt-4 text-[#00325B] font-medium leading-[1.05] text-[55px]">
+                Ready to Plan
+                <br />
+                an Event ?
+              </h2>
+            </div>
 
-          <div className="w-7/12 h-full">
-            <p className="text-[#4B5563] font-medium text-xl leading-[1.65] max-w-[746px]">
-              Every great event starts with organized details while executing
-              them brilliantly, We offer a variety of options to assist in
-              making your event as perfect as you have imagined it!
-            </p>
+            <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
+              <p className="text-[#4B5563] font-medium text-xl leading-[1.65] max-w-[746px]">
+                Every great event starts with organized details while executing
+                them brilliantly, We offer a variety of options to assist in
+                making your event as perfect as you have imagined it!
+              </p>
 
-            <ul className="mt-8 flex gap-6">
-              {[
-                { Icon: FaInstagram, label: "Instagram" },
-                { Icon: FaFacebookF, label: "Facebook" },
-                { Icon: FaXTwitter, label: "X" },
-                { Icon: FaLinkedinIn, label: "LinkedIn" },
-              ].map(({ Icon, label }, i) => (
-                <li key={i}>
-                  <button
-                    aria-label={label}
-                    className="h-14 w-14 rounded-full border border-[#093b64] text-[#093b64] grid place-items-center text-[22px] transition-transform hover:scale-[1.03] active:scale-[0.98]"
-                  >
-                    <Icon />
-                  </button>
-                </li>
-              ))}
-            </ul>
+              <ul className="mt-6 lg:mt-8 flex justify-center lg:justify-start gap-4 sm:gap-6">
+                {[
+                  { Icon: FaInstagram, label: "Instagram" },
+                  { Icon: FaFacebookF, label: "Facebook" },
+                  { Icon: FaXTwitter, label: "X" },
+                  { Icon: FaLinkedinIn, label: "LinkedIn" },
+                ].map(({ Icon, label }, i) => (
+                  <li key={i}>
+                    <button
+                      aria-label={label}
+                      className="h-14 w-14 rounded-full border border-[#093b64] text-[#093b64] grid place-items-center text-[22px] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                    >
+                      <Icon />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>{" "}
-      <section className="w-full my-20">
+      <section className="w-full my-20 px-6">
         <div className="mx-auto max-w-[102rem]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-24 gap-y-10">
             <div>
               <h3 className="text-[#00325B] text-[28px] font-medium">Phone</h3>
-              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-medium">
                 <p>
                   <a href="tel:+97143962335" className="hover:underline">
                     +971-4-396-2335
@@ -102,7 +104,7 @@ export default function ContactPage() {
 
             <div>
               <h3 className="text-[#00325B] text-[28px] font-medium">Email</h3>
-              <div className="mt-4 text-[#4B5563] text-[22px] font-normal">
+              <div className="mt-4 text-[#4B5563] text-[22px] font-medium">
                 <a
                   href="mailto:events@perfettogroup.ae"
                   className="hover:underline break-all"
@@ -116,7 +118,7 @@ export default function ContactPage() {
               <h3 className="text-[#00325B] text-[28px] font-medium">
                 Head Office
               </h3>
-              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-medium">
                 <p>Dubai Park Lane Towers</p>
                 <p>Office # 2013 Business Bay Dubai</p>
               </div>
@@ -126,7 +128,7 @@ export default function ContactPage() {
               <h3 className="text-[#00325B] text-[28px] font-medium">
                 Branch Office
               </h3>
-              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-normal">
+              <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-medium">
                 <p>Naressco 4 Building</p>
                 <p>Office # M05 Al Karama Dubai</p>
               </div>
@@ -134,24 +136,35 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <section className="w-full">
+      <section className="w-full p-6">
         <div className="mx-auto max-w-[102rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[700px]">
-            <div className="h-full rounded-xl bg-[#D9D9D9] relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:items-stretch">
+            {/* Image: aspect on small; stretch on lg */}
+            <div
+              className="relative overflow-hidden rounded-xl
+                      aspect-[16/9] sm:aspect-[4/3]
+                      lg:aspect-auto lg:h-full lg:min-h-[520px]"
+            >
               <Image
                 src="/images/contact/contact.webp"
+                alt="Contact"
                 fill
-                alt="contact.webp"
+                className="object-cover"
                 loading="lazy"
               />
             </div>
 
-            <div className="rounded-xl bg-[#FBF8F4] p-10 lg:p-16 flex flex-col h-full  justify-center">
-              <h3 className="text-[#00325B] text-2xl lg:text-[35px] font-semibold ">
+            {/* Form card: stretch to same row height */}
+            <div
+              className="rounded-xl bg-[#FBF8F4] p-10 lg:p-16
+                      flex flex-col justify-center
+                      lg:h-full lg:min-h-[520px]"
+            >
+              <h3 className="text-[#00325B] text-center lg:text-left text-2xl sm:text-3xl lg:text-[35px] font-semibold">
                 We’d love to hear from you
               </h3>
 
-              <form className="mt-10 flex flex-col gap-8 ">
+              <form className="mt-10 flex flex-col gap-8">
                 <label className="block">
                   <input
                     type="text"
@@ -179,7 +192,7 @@ export default function ContactPage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className=" block h-16 px-10 rounded-full border border-[#F0A04B] text-[#00325B] text-3xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+                    className="block h-16 px-10 rounded-full border border-[#F0A04B] text-[#00325B] text-3xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
                   >
                     Submit
                   </button>
