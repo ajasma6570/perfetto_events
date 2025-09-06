@@ -188,7 +188,7 @@ export default function ServicesOverview() {
             fill
             className="object-cover lg:hidden"
           />
-          <div className="absolute inset-0 flex lg:flex-row flex-col justify-between items-start lg:items-center gap-10 w-full px-4 lg:px-12 text-white py-10 lg:py-0">
+          <div className="absolute inset-0 flex lg:flex-row flex-col justify-center lg:justify-between items-start lg:items-center gap-10 w-full px-4 lg:px-12 text-white py-10 lg:py-0">
             <p className="text-4xl xl:text-5xl font-medium">
               Have something <br className="block lg:hidden" /> on mind to{" "}
               <br className="block lg:hidden" />

@@ -116,7 +116,7 @@ export default function Navbar() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-80%", opacity: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="fixed inset-0 bg-[#174880] flex flex-col justify-center items-center text-white space-y-6 text-3xl"
+              className="fixed inset-0 bg-[#174880] h-[90vh] flex flex-col justify-center items-center text-white space-y-6 text-3xl"
             >
               <ul className="space-y-6 text-center">
                 {routes.map((route) => (

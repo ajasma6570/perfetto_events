@@ -90,7 +90,7 @@ export default function AboutPage() {
 
   return (
     <div className="pt-24 space-y-20 ">
-      <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto">
+      <div className="pt-24 flex justify-center flex-col px-6 items-center text-center space-y-4 max-w-6xl mx-auto">
         <p
           className={cn(
             "text-xl uppercase text-[#C4161C] font-light",
@@ -99,42 +99,43 @@ export default function AboutPage() {
         >
           About us
         </p>
-        <h1 className="text-[55px] text-[#00325B] font-medium">
+        <h1 className="text-4xl lg:text-[55px] text-[#00325B] font-medium">
           Crafting Experiences, Defining Moments
         </h1>
       </div>
 
-      <div className="w-full max-w-[102rem] mx-auto">
-        <Image
-          src="/images/about/banner.webp"
-          alt="Perfetto Event Management — event highlights collage"
-          width={1600}
-          height={540}
-          className="object-cover"
-          priority
-        />
+      <div className="w-full max-w-[102rem] mx-auto px-6">
+        <div className="relative w-full overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[80/27]">
+          <Image
+            src="/images/about/banner.webp"
+            alt="Perfetto Event Management — event highlights collage"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <section
         aria-labelledby="overview-heading"
-        className="w-full mx-auto max-w-[900px]"
+        className="w-full mx-auto max-w-[900px] px-6"
       >
-        <h2 className="text-[55px] text-[#00325B] font-medium">
+        <h2 className="text-4xl lg:text-5xl text-[#00325B] font-semibold text-center">
           Seamless Events, Enduring Impact
         </h2>
         <ul className="p-5 space-y-8 text-center text-2xl mt-10">
-          <li className="font-medium text-[#4B5563]">
+          <li className="font-normal text-[#4B5563]">
             We believe that every brand has a special story to tell – one that
             is unique and personal. That’s where Perfetto Event Management steps
             in: to help you showcase that story in our most distinctive style.
           </li>
-          <li className="font-medium text-[#4B5563]">
+          <li className="font-normal text-[#4B5563]">
             We understand that your vision board isn’t just a few vague ideas
             but it is an amalgamation of well-thought-out details that you, as a
             company or individual, want to see come to life. And Perfetto
             promises to make that happen.
           </li>
-          <li className="font-medium text-[#4B5563]">
+          <li className="font-normal text-[#4B5563]">
             From creative ideation and designing a plan to leveraging our
             extensive supplier relationships to picking the best-suited
             packages, the relationship we form with our clients around the globe
@@ -146,40 +147,42 @@ export default function AboutPage() {
 
       <section
         aria-labelledby="highlights-heading"
-        className="max-w-[102rem] w-full mx-auto"
+        className="max-w-[102rem] w-full mx-auto px-6"
       >
-        <div className="flex justify-center items-center gap-10 text-lg font-semibold text-[#00325B]">
+        <div className="flex justify-center items-center gap-10  font-semibold text-[#00325B]">
           <span className="sr-only">75+ Clients</span>
-          <p className="text-[40px] font-medium">75+ Clients</p>
-          <span className="w-[4px] h-8 bg-[#00325B]" />
+          <p className="text-3xl lg:text-[40px] font-medium">75+ Clients</p>
+          <span className="w-[4px] h-8 bg-[#00325B] hidden lg:block" />
           <span className="sr-only">600+ Events</span>
-          <p className="text-[40px] font-medium">600+ Events</p>
+          <p className="text-3xl lg:text-[40px] font-medium">600+ Events</p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative h-[400px] md:h-[500px]">
+        <div className="mt-12 grid grid-cols-2 gap-4 lg:gap-6">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[5/3]">
             <Image
               src="/images/about/vector-3.webp"
               alt="Service Image"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover"
               loading="lazy"
+              sizes="(min-width:1024px) 50vw, (min-width:640px) 50vw, 100vw"
             />
           </div>
 
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[5/3]">
             <Image
               src="/images/about/vector-2.webp"
               alt="Service Image"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover"
               loading="lazy"
+              sizes="(min-width:1024px) 50vw, (min-width:640px) 50vw, 100vw"
             />
           </div>
         </div>
       </section>
 
-      <section className="max-w-[102rem] mx-auto px-6 py-16 ">
+      <section className="max-w-[102rem] mx-auto px-6 pb-16 lg:py-16 ">
         <div className="text-left  mb-12 space-y-8">
           <p
             className={cn(
@@ -200,16 +203,18 @@ export default function AboutPage() {
           <h2 className="text-4xl font-bold text-[#00325B] mt-2">
             The Perfetto Advantage
           </h2>
-          <p className="text-[#4B5563] text-2xl w-[900px] mt-4">
-            Perfetto Event Management brings precision and creativity to every
-            project, ensuring that your brand’s vision is transformed into a
-            flawless reality.
+          <p className="text-[#4B5563] text-2xl mt-4 font-normal">
+            Perfetto Event Management takes pride in the fact that we are known
+            for our hands-on <br className="hidden lg:block" /> and multifaceted
+            approach when it comes to getting a job done. We have got it all to{" "}
+            <br className="hidden lg:block" /> make your event a success – an
+            eye for detail as well as the talent to see the big picture.
           </p>
         </div>
 
         <div className="w-full flex mt-20">
-          <div className="w-2/12"></div>
-          <div className="w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="hidden lg:block w-2/12"></div>
+          <div className="w-full lg:w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="text-left p-6">
                 <div className="w-[108px] h-[108px] flex items-center justify-center border border-[#00325B] rounded-full mb-6">
@@ -260,7 +265,7 @@ export default function AboutPage() {
             What Goes on Behind the Scenes
           </h2>
 
-          <p className="mt-3 font-medium text-center text-2xl w-5xl mx-auto leading-6 text-[#4B5563]">
+          <p className="mt-3 font-normal text-center text-2xl mx-auto text-[#4B5563]">
             Every great event starts with organizing all the details, followed
             by the beautiful journey of executing them brilliantly. We offer a
             variety of options to help you make your event as perfect as you
@@ -274,9 +279,9 @@ export default function AboutPage() {
                   key={s.title}
                   className="rounded-2xl border border-[#FFE5BE] p-7 "
                 >
-                  <div className="grid items-center gap-6 lg:gap-12 md:grid-cols-12">
-                    <div className="w-[108px] h-[108px] col-span-2 flex items-center justify-center border border-[#00325B] rounded-full mb-6">
-                      <img
+                  <div className="grid items-center gap-4 lg:gap-12 grid-cols-12">
+                    <div className="w-[108px] h-[108px] col-span-12 lg:col-span-2 flex items-center justify-center border border-[#00325B] rounded-full mb-6">
+                      <Image
                         src={`/images/icons/${s.icon}`}
                         alt={s.title}
                         height={50}
@@ -284,11 +289,11 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    <h3 className="text-[33px] font-medium leading-tight col-span-3 text-[#00325B]">
+                    <h3 className="text-[33px] font-medium leading-tight col-span-12 lg:col-span-3 text-[#00325B]">
                       {s.title}
                     </h3>
 
-                    <p className="text-[22px] leading-8 col-span-7 text-[#4B5563]">
+                    <p className="text-[22px] leading-8 col-span-12 lg:col-span-7 text-[#4B5563]">
                       {s.body}
                     </p>
                   </div>
@@ -312,16 +317,17 @@ export default function AboutPage() {
               className="object-cover lg:hidden"
             />
 
-            <div className="absolute inset-0 flex lg:flex-row flex-col items-center gap-10 w-full px-12 text-white py-10 lg:py-0">
-              <p className="text-5xl lg:text-[45px] font-medium">
-                Have something on mind to discuss?
+            <div className="absolute inset-0 flex lg:flex-row flex-col justify-center lg:justify-between items-start lg:items-center gap-10 w-full px-4 lg:px-12 text-white py-10 lg:py-0">
+              <p className="text-4xl xl:text-5xl font-medium">
+                Have something <br className="block lg:hidden" /> on mind to{" "}
+                <br className="block lg:hidden" />
+                discuss?
               </p>
-
-              <div className="flex lg:flex-row flex-col gap-4 text-lg lg:text-xl">
-                <button className="border px-5 lg:px-10 py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transform transition-all duration-300">
+              <div className="flex lg:flex-row flex-col gap-4 ">
+                <button className="self-start w-auto px-4 lg:px-6 py-4 lg:py-5 text-xl sm:text-2xl whitespace-nowrap border rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
                   Book Your Free Consultation
                 </button>
-                <button className="border px-5 lg:px-10 py-5 rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transform transition-all duration-300">
+                <button className="self-start w-auto px-4 lg:px-6 py-4 lg:py-5 text-xl sm:text-2xl whitespace-nowrap border rounded-full hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
                   Get in Touch
                 </button>
               </div>
@@ -330,11 +336,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="clients-heading" className="py-12">
+      <section aria-labelledby="clients-heading" className="py-12 px-6">
         <div className="text-center">
           <p
             className={cn(
-              " inline-flex justify-center items-center w-full  gap-2 text-xl uppercase text-[#C4161C] font-light",
+              " inline-flex justify-center items-center w-full gap-2 text-xl uppercase text-[#C4161C] font-light",
               manrope.className
             )}
           >
@@ -356,12 +362,12 @@ export default function AboutPage() {
 
         <ul
           role="list"
-          className="mx-auto mt-10 max-w-[102rem] grid place-items-center grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7"
+          className="mx-auto mt-10 max-w-[102rem] grid place-items-center  gap-x-12 gap-y-10 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7"
         >
           {clients.map((client, i) => (
             <li
               key={client}
-              className="flex-shrink-0 w-[130px] h-[130px] relative"
+              className="flex-shrink-0 lg:w-[130px] w-[100px] h-[100px] lg:h-[130px] relative"
             >
               <Image
                 src={`/images/home/clients/${client}`}
