@@ -27,7 +27,7 @@ export default function BlogSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 max-w-[102rem] mx-auto  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-6 max-w-[102rem] mx-auto  ">
         {blogs.slice(0, 3).map((item, index) => (
           <Link
             key={index}
