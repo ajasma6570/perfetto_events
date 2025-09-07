@@ -34,28 +34,32 @@ export default function Footer() {
             manrope.className
           )}
         >
-          <ul className="flex justify-center gap-10">
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/about">About Us</Link>
-            </li>{" "}
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/services">Our Services</Link>
-            </li>
-          </ul>
-          <ul className="flex justify-center gap-10">
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/gallery">Gallery</Link>
-            </li>
-            <li className="justify-self-center md:justify-self-auto hover:text-[#C4161C]">
-              <Link href="/contact">Contact Us</Link>
-            </li>
-          </ul>
+          <li>
+            <ul className="flex justify-center gap-10">
+              <li className="hover:text-[#C4161C]">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="hover:text-[#C4161C]">
+                <Link href="/about">About Us</Link>
+              </li>
+              <li className="hover:text-[#C4161C]">
+                <Link href="/services">Our Services</Link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className="flex justify-center gap-10">
+              <li className="hover:text-[#C4161C]">
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li className="hover:text-[#C4161C]">
+                <Link href="/gallery">Gallery</Link>
+              </li>
+              <li className="hover:text-[#C4161C]">
+                <Link href="/contact">Contact Us</Link>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
 

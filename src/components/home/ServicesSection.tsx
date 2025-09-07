@@ -81,7 +81,7 @@ export default function ServicesOverview() {
                 "relative py-2 md:py-3 px-2 md:px-6 whitespace-nowrap cursor-pointer transition-colors",
                 selectedService === "event-management"
                   ? "text-black"
-                  : "text-[#A6A6A6]"
+                  : "text-gray-600"
               )}
               onClick={() => setSelectedService("event-management")}
             >
@@ -94,7 +94,7 @@ export default function ServicesOverview() {
                 "relative py-2 md:py-3 px-2 md:px-6 whitespace-nowrap cursor-pointer transition-colors",
                 selectedService === "event-permits"
                   ? "text-black"
-                  : "text-[#A6A6A6]"
+                  : "text-gray-600"
               )}
               onClick={() => setSelectedService("event-permits")}
             >

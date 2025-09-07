@@ -90,7 +90,11 @@ export default function Testimonials() {
         </div>
 
         <div className="flex items-center justify-center gap-4 mt-8">
-          <button onClick={prevSlide} className="text-[#C4161C]">
+          <button
+            onClick={prevSlide}
+            className="text-[#C4161C]"
+            aria-label="Previous testimonial"
+          >
             <BiChevronLeft size={40} />
           </button>
           <div className="flex items-center gap-2">
@@ -101,11 +105,15 @@ export default function Testimonials() {
                 className={`w-4 h-4 rounded-full border-2 border-[#C4161C] ${
                   current === i ? "bg-[#C4161C]" : "bg-transparent"
                 }`}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}
           </div>
-          <button onClick={nextSlide} className="text-[#C4161C]">
+          <button
+            onClick={nextSlide}
+            className="text-[#C4161C]"
+            aria-label="Next testimonial"
+          >
             <BiChevronRight size={40} />
           </button>
         </div>
@@ -176,7 +184,11 @@ export default function Testimonials() {
           </div>
 
           <div className="flex items-center justify-center gap-5 mt-20">
-            <button onClick={prevSlide} className="text-[#C4161C]">
+            <button
+              onClick={prevSlide}
+              className="text-[#C4161C]"
+              aria-label="Previous testimonial"
+            >
               <BiChevronLeft size={35} />
             </button>
             <div className="flex items-center gap-3">
@@ -187,11 +199,15 @@ export default function Testimonials() {
                   className={`w-4 h-4 rounded-full border-2 border-[#C4161C] ${
                     current === i ? "bg-[#C4161C]" : "bg-transparent"
                   }`}
-                  aria-label={`Go to slide ${i + 1}`}
+                  aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
             </div>
-            <button onClick={nextSlide} className="text-[#C4161C]">
+            <button
+              onClick={nextSlide}
+              className="text-[#C4161C]"
+              aria-label="Next testimonial"
+            >
               <BiChevronRight size={35} />
             </button>
           </div>
