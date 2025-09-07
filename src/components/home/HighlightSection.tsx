@@ -2,13 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { Manrope } from "next/font/google";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
+import Link from "next/link";
 
 export default function HighlightSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -61,10 +55,9 @@ export default function HighlightSection() {
       <div className="">
         <div className="max-w-[102rem] w-full mx-auto space-y-8 px-5 sm:px-6">
           <p
-            className={cn(
-              " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
-              manrope.className
-            )}
+            className={
+              " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20 font-manrope"
+            }
           >
             <span>
               <Image
@@ -76,14 +69,13 @@ export default function HighlightSection() {
             </span>
             Gallery
           </p>
-          <p className="text-4xl sm:text-3xl lg:text-5xl text-[#00325B] font-medium leading-tight">
+          <p className="text-4xl  lg:text-5xl text-[#00325B] font-medium leading-tight">
             Highlights From Our Creations
           </p>
           <p
-            className={cn(
-              "text-xl lg:text-2xl font-medium text-[#4B5563] ",
-              manrope.className
-            )}
+            className={
+              "text-xl lg:text-2xl font-medium text-[#4B5563] font-manrope"
+            }
           >
             See how ideas turn into unforgettable experiences{" "}
             <br className="hidden lg:block" />
@@ -91,7 +83,7 @@ export default function HighlightSection() {
           </p>
         </div>
 
-        <div className="w-full ml-auto max-w-[110.5rem] overflow-hidden lg:pl-6">
+        <div className="w-full ml-auto max-w-[110.5rem] overflow-hidden lg:pl-6 space-y-12">
           <div className="overflow-hidden mt-20 px-5 sm:px-6">
             <div
               ref={containerRef}
@@ -119,9 +111,12 @@ export default function HighlightSection() {
           </div>
 
           <div className="px-4 lg:px-0">
-            <button className="border border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+            <Link
+              href={"/gallery"}
+              className="border border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+            >
               See the Moments
-            </button>
+            </Link>
           </div>
         </div>
       </div>

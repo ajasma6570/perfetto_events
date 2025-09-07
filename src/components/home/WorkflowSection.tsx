@@ -1,13 +1,7 @@
-import { cn } from "@/lib/utils";
 import { workflowSteps } from "@/static-data/home";
-import { Manrope } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
 
 export default function WorkflowSection() {
   return (
@@ -27,12 +21,11 @@ export default function WorkflowSection() {
         className="object-cover object-center md:hidden block"
       />
 
-      <div className="relative mx-auto max-w-[102rem] px-4 sm:px-6 py-16 sm:py-20">
+      <div className="relative mx-auto max-w-[102rem] px-6 py-16 sm:py-20">
         <p
-          className={cn(
-            " inline-flex justify-start items-center w-5/12 gap-2 text-xl uppercase text-white font-light",
-            manrope.className
-          )}
+          className={
+            " inline-flex justify-start items-center w-5/12 gap-2 text-xl uppercase text-white font-light font-manrope"
+          }
         >
           <span>
             <Image
@@ -45,15 +38,18 @@ export default function WorkflowSection() {
           What we do
         </p>
         <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
-          <p className="text-[55px] text-white font-medium">
+          <p className="text-4xl lg:text-6xl text-white font-medium">
             What Goes on Behind the Scenes
           </p>
-          <button className="self-stretch xl:block hidden sm:self-auto border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-2xl rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
+          <Link
+            href={"/contact"}
+            className="self-stretch xl:block hidden sm:self-auto border w-auto py-4 lg:py-6 px-7 lg:px-10 text-xl lg:text-2xl rounded-full font-medium text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300"
+          >
             Know the Process
-          </button>
+          </Link>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
           {workflowSteps.map((item, index) => (
             <div
               key={index}
@@ -74,9 +70,12 @@ export default function WorkflowSection() {
           ))}
         </div>
 
-        <button className="self-stretch mt-4 xl:hidden sm:self-auto border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-2xl rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300">
+        <Link
+          href={"/contact"}
+          className="self-stretch mt-4 xl:hidden sm:self-auto border w-auto py-4 lg:py-6 px-7 lg:px-10 text-xl lg:text-2xl font-medium rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300"
+        >
           Know the Process
-        </button>
+        </Link>
       </div>
     </section>
   );

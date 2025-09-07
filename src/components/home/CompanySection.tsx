@@ -10,12 +10,12 @@ export default function CompanyOverview() {
 
   return (
     <section
-      className={`h-full pt-20 pb-10 transition-colors duration-500  px-5 sm:px-6 ${
+      className={`h-full pt-20 pb-10 transition-colors duration-500 px-5 sm:px-6 ${
         hovered ? "bg-[#001A2E]" : "bg-white"
       }`}
     >
       <h2
-        className={`xl:w-6xl mx-auto text-3xl md:text-4xl xl:text-[55px] leading-snug font-medium text-center transition-colors duration-500 ${
+        className={`xl:w-7xl mx-auto text-2xl lg:text-5xl leading-snug font-medium text-center transition-colors duration-500 ${
           hovered ? "text-white" : "text-[#00325B]"
         }`}
       >
@@ -78,10 +78,10 @@ export default function CompanyOverview() {
         </AnimatePresence>
       </div>
 
-      <div className="flex md:flex-row flex-col w-full max-w-[102rem] mx-auto mt-20 space-y-8 md:space-y-0">
+      <div className="flex md:flex-row flex-col w-full max-w-[102rem] mx-auto mt-20 space-y-12 md:space-y-0">
         <ul
           className={cn(
-            "w-full gap-8 md:w-4/12 lg:w-1/2 text-2xl sm:text-3xl md:text-4xl md:space-y-4 font-medium flex flex-row md:flex-col md:justify-start md:items-start justify-center items-center",
+            "w-full gap-2 lg:gap-4 md:w-4/12 xl:w-1/2 text-2xl sm:text-4xl lg:text-5xl md:space-y-4 font-medium flex flex-row md:flex-col md:justify-start md:items-start justify-between items-center",
             hovered ? "text-white" : "text-[#00325B]"
           )}
         >
@@ -92,10 +92,10 @@ export default function CompanyOverview() {
             <span className="font-bold">600+</span> Events
           </li>
         </ul>
-        <ul className="w-full flex md:justify-start md:items-start justify-center flex-col items-center md:w-8/12 lg:w-1/2 space-y-10">
+        <ul className="w-full flex md:justify-start md:items-start justify-center flex-col items-start md:w-8/12 xl:w-1/2 space-y-10">
           <li
             className={cn(
-              "text-2xl",
+              "text-xl lg:text-2xl",
               hovered ? "text-[#476794]" : "text-[#4B5563]"
             )}
           >
@@ -109,7 +109,7 @@ export default function CompanyOverview() {
           <li>
             <button
               className={cn(
-                " border w-auto py-5 px-8 rounded-full font-medium text-2xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300",
+                "self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full font-medium text-xl lg:text-2xl hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300",
                 hovered
                   ? "bg-[#001A2E] text-white"
                   : "text-[#001A2E] border-[#F7931E]"

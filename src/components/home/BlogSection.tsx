@@ -1,43 +1,17 @@
-import { cn } from "@/lib/utils";
-import { i, section } from "motion/react-m";
-import { Manrope } from "next/font/google";
+import { blogs } from "@/static-data/blogs";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa6";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
 export default function BlogSection() {
-  const blogs = [
-    {
-      title: "Unlocking strategies of corporate tax 2023",
-      date: "August 01, 2025",
-      image: "event.webp",
-    },
-    {
-      title:
-        "Perfetto Events Unveils an Unforgettable Event for BSI Lifestyle Concierge",
-      date: "August 01, 2025",
-      image: "event-2.webp",
-    },
-    {
-      title:
-        "The Future of Hybrid Events: Blending Virtual and In-Person Experiences",
-      date: "August 01, 2025",
-      image: "event-3.webp",
-    },
-  ];
   return (
     <section className="bg-[#FAF8F5] pb-20">
       <div className="mx-auto max-w-[102rem] px-4 sm:px-6 py-12 sm:py-16">
         <div
-          className={cn(
-            "inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light mt-20",
-            manrope.className
-          )}
+          className={
+            "inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light mt-20 font-manrope"
+          }
         >
           <Image
             src="/images/logo-inline.webp"
@@ -53,16 +27,20 @@ export default function BlogSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-14 lg:gap-16 max-w-[102rem] mx-auto  ">
-        {blogs.map((item, index) => (
-          <article key={index} className="space-y-4 px-4 sm:px-6">
-            <p className={cn("text-[#4E4E4E] text-xl font-medium", manrope)}>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 max-w-[102rem] mx-auto  ">
+        {blogs.slice(0, 3).map((item, index) => (
+          <Link
+            key={index}
+            href={`/blog/${item.slug}`}
+            className="space-y-4 px-4 sm:px-6 hover:shadow-xl rounded-2xl transform transition-all duration-300"
+          >
+            <p className={"text-[#4E4E4E] text-xl font-medium font-manrope"}>
               Events | {item.date}
             </p>
 
             <div className="relative group cursor-pointer overflow-hidden rounded-xl w-full  h-56 sm:h-[300px]">
               <Image
-                src={`/images/home/${item.image}`}
+                src={`/images/blog/${item.src}`}
                 alt={item.title}
                 fill
                 className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
@@ -74,17 +52,20 @@ export default function BlogSection() {
               {item.title}
             </p>
 
-            <button className="text-2xl font-medium items-center text-[#4B5563] inline-flex">
+            <span className="text-2xl font-medium items-center text-[#4B5563] inline-flex">
               Read more <FaChevronRight size={15} />
-            </button>
-          </article>
+            </span>
+          </Link>
         ))}
       </div>
 
-      <div className="flex justify-center mt-5 md:mt-10">
-        <button className="border  border-[#F7931E] text-[#001A2E] text-xl  rounded-full px-10 mt-12 py-6 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300">
+      <div className="flex justify-center mt-10 md:mt-20">
+        <Link
+          href={"/blog"}
+          className="border  border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+        >
           Discover the Blog
-        </button>
+        </Link>
       </div>
     </section>
   );

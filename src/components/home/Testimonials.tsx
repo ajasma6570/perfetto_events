@@ -1,14 +1,7 @@
-import { cn } from "@/lib/utils";
 import { testimonials } from "@/static-data/home";
-import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
@@ -22,12 +15,11 @@ export default function Testimonials() {
   const N = testimonials[nextIndex];
 
   return (
-    <section className="py-12 w-full">
+    <section className="py-20 lg:py-28 w-full">
       <p
-        className={cn(
-          " inline-flex justify-center w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20",
-          manrope.className
-        )}
+        className={
+          " inline-flex justify-center w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center font-manrope"
+        }
       >
         <span>
           <Image
@@ -41,15 +33,17 @@ export default function Testimonials() {
       </p>
 
       <h2
-        className={`${manrope.className} text-[#00325B] font-medium text-5xl md:text-[55px] text-center leading-tight mt-4`}
+        className={`font-manrope text-[#00325B] font-medium text-5xl md:text-6xl text-center leading-tight mt-4`}
       >
         Client Stories,
         <br /> Event Success
       </h2>
 
-      <div className="mt-10 mx-auto max-w-xl px-8 xl:hidden">
-        <div className="space-y-6">
-          <p className="text-lg text-[#001A2E] font-medium">{T.quote}</p>
+      <div className="mt-10 lg:mt-20 mx-auto max-w-3xl px-8 xl:hidden">
+        <div className="space-y-8">
+          <p className="text-xl lg:text-2xl text-[#001A2E] font-normal">
+            {T.quote}
+          </p>
 
           <div className="flex items-center gap-3">
             <div className="relative flex">
@@ -97,14 +91,14 @@ export default function Testimonials() {
 
         <div className="flex items-center justify-center gap-4 mt-8">
           <button onClick={prevSlide} className="text-[#C4161C]">
-            <BiChevronLeft size={28} />
+            <BiChevronLeft size={40} />
           </button>
           <div className="flex items-center gap-2">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 rounded-full border-2 border-[#C4161C] ${
+                className={`w-4 h-4 rounded-full border-2 border-[#C4161C] ${
                   current === i ? "bg-[#C4161C]" : "bg-transparent"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
@@ -112,15 +106,14 @@ export default function Testimonials() {
             ))}
           </div>
           <button onClick={nextSlide} className="text-[#C4161C]">
-            <BiChevronRight size={28} />
+            <BiChevronRight size={40} />
           </button>
         </div>
       </div>
 
-      <div className="hidden xl:block mt-14">
+      <div className="hidden xl:block mt-24">
         <div className="mx-auto max-w-[102rem] px-6">
           <div className="grid grid-cols-3 gap-12 items-start">
-            {/* Left image (current) */}
             <div className="relative overflow-hidden rounded-xl">
               <div className="relative aspect-[4/3]">
                 <Image
@@ -132,15 +125,13 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Center quote (current) */}
             <div className="flex flex-col justify-center gap-6">
-              <p className="text-xl lg:text-2xl text-[#001A2E] font-medium">
+              <p className="text-xl lg:text-2xl text-[#001A2E] font-normal">
                 {T.quote}
               </p>
 
               <div className="flex items-center gap-3">
                 <div className="h-14 w-14 border border-[#F7A41E] rounded-full grid place-items-center">
-                  {/* quote icon */}
                   <svg
                     width="22"
                     height="16"
@@ -155,7 +146,6 @@ export default function Testimonials() {
                   </svg>
                 </div>
 
-                {/* avatar — use fixed size, NOT fill */}
                 <Image
                   src={T.clientImg}
                   alt={T.name}
@@ -173,7 +163,6 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Right image (next) */}
             <div className="relative overflow-hidden rounded-xl">
               <div className="relative aspect-[4/3]">
                 <Image
@@ -186,8 +175,7 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Dots + arrows */}
-          <div className="flex items-center justify-center gap-5 mt-10">
+          <div className="flex items-center justify-center gap-5 mt-20">
             <button onClick={prevSlide} className="text-[#C4161C]">
               <BiChevronLeft size={35} />
             </button>

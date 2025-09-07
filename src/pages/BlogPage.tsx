@@ -71,6 +71,7 @@ export default function BlogPage() {
           </div>
         ))}
       </div>
+
       <ProcessSection />
     </div>
   );
