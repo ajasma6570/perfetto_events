@@ -52,73 +52,69 @@ export default function HighlightSection() {
 
   return (
     <section className="pb-20">
-      <div className="">
-        <div className="max-w-[102rem] w-full mx-auto space-y-8 px-5 sm:px-6">
-          <p
-            className={
-              " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20 font-manrope"
-            }
+      <div className="max-w-[102rem] w-full mx-auto space-y-8 px-5 sm:px-6">
+        <p
+          className={
+            " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20 font-manrope"
+          }
+        >
+          <span>
+            <Image
+              src="/images/logo-inline.webp"
+              alt="Logo"
+              width={16}
+              height={16}
+            />
+          </span>
+          Gallery
+        </p>
+        <p className="text-4xl  lg:text-5xl text-[#00325B] font-medium leading-tight">
+          Highlights From Our Creations
+        </p>
+        <p
+          className={
+            "text-xl lg:text-2xl font-medium text-[#4B5563] font-manrope"
+          }
+        >
+          See how ideas turn into unforgettable experiences{" "}
+          <br className="hidden lg:block" />
+          through our event showcase.
+        </p>
+      </div>
+      <div className="w-full ml-auto max-w-[110.5rem] overflow-hidden lg:pl-6 space-y-12">
+        <div className="overflow-hidden mt-20 px-5 sm:px-6">
+          <div
+            ref={containerRef}
+            className="flex gap-4"
+            style={{
+              transform: `translateX(${translate}px)`,
+              transition: "transform 0.05s linear",
+            }}
           >
-            <span>
-              <Image
-                src="/images/logo-inline.webp"
-                alt="Logo"
-                width={16}
-                height={16}
-              />
-            </span>
-            Gallery
-          </p>
-          <p className="text-4xl  lg:text-5xl text-[#00325B] font-medium leading-tight">
-            Highlights From Our Creations
-          </p>
-          <p
-            className={
-              "text-xl lg:text-2xl font-medium text-[#4B5563] font-manrope"
-            }
-          >
-            See how ideas turn into unforgettable experiences{" "}
-            <br className="hidden lg:block" />
-            through our event showcase.
-          </p>
-        </div>
-
-        <div className="w-full ml-auto max-w-[110.5rem] overflow-hidden lg:pl-6 space-y-12">
-          <div className="overflow-hidden mt-20 px-5 sm:px-6">
-            <div
-              ref={containerRef}
-              className="flex gap-4"
-              style={{
-                transform: `translateX(${translate}px)`,
-                transition: "transform 0.05s linear",
-              }}
-            >
-              {images.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative aspect-[calc(1*3+1)/3] w-auto flex-shrink-0 overflow-hidden rounded-xl"
-                >
-                  <Image
-                    src={`/images/home/${item.src}`}
-                    alt={`Gallery ${i + 1}`}
-                    height={item.height}
-                    width={item.width}
-                    className="object-cover  "
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="px-4 lg:px-0">
-            <Link
-              href={"/gallery"}
-              className="border border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
-            >
-              See the Moments
-            </Link>
+            {images.map((item, i) => (
+              <div
+                key={i}
+                className="relative aspect-[calc(1*3+1)/3] w-auto flex-shrink-0 overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={`/images/home/${item.src}`}
+                  alt={`Gallery ${i + 1}`}
+                  height={item.height}
+                  width={item.width}
+                  className="object-cover  "
+                />
+              </div>
+            ))}
           </div>
         </div>
+      </div>{" "}
+      <div className="px-6 mt-16 w-full ml-auto max-w-[110.5rem]">
+        <Link
+          href={"/gallery"}
+          className="border border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+        >
+          See the Moments
+        </Link>
       </div>
     </section>
   );

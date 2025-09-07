@@ -59,10 +59,10 @@ export default function BlogSection() {
         ))}
       </div>
 
-      <div className="flex justify-center mt-10 md:mt-20">
+      <div className="flex px-6 md:justify-center mt-10 md:mt-20">
         <Link
           href={"/blog"}
-          className="border  border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
+          className="border   border-[#F7931E] text-[#001A2E] text-xl lg:text-2xl rounded-full w-auto py-4 lg:py-6 px-7 lg:px-10 font-medium hover:bg-[#C4161C] hover:border-[#C4161C] hover:text-white transition-all duration-300"
         >
           Discover the Blog
         </Link>
