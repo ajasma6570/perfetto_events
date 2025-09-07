@@ -1,5 +1,6 @@
-import { Albert_Sans, Manrope } from "next/font/google";
 import "./globals.css";
+import { Albert_Sans, Manrope } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -48,6 +49,13 @@ export default function RootLayout({
       <body
         className={`${albertSans.variable} ${manrope.variable} font-albert-sans antialiased relative`}
       >
+        <NextTopLoader
+          color="#00325B"
+          crawlSpeed={300}
+          showSpinner={false}
+          shadow="none"
+          zIndex={9999999}
+        />
         <Navbar />
         {children}
         <Footer />
