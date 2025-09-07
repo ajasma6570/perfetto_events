@@ -41,7 +41,7 @@ export default function BlogPage() {
           <div
             key={blog.id}
             onClick={() => handleBlogClick(blog.slug)}
-            className="p-4 flex flex-col relative group overflow-hidden cursor-pointer"
+            className="p-4 flex flex-col relative group overflow-hidden cursor-pointer hover:shadow-xl rounded-2xl"
           >
             <div className="relative w-full overflow-hidden rounded-xl aspect-[16/9]">
               <Image
