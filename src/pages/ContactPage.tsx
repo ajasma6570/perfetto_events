@@ -1,6 +1,7 @@
 "use client";
 
 import ProcessSection from "@/components/ProcessSection";
+import { faqs } from "@/static-data/contact";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -8,84 +9,59 @@ import { BiChevronDown } from "react-icons/bi";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
 export default function ContactPage() {
-  const faqs = [
-    {
-      q: "Why is a DTCM event permit necessary?",
-      a: "In order to ensure compliance with local laws and regulations, and to guarantee the safety and well-being of all attendees, event organizers in Dubai must obtain a DTCM.",
-    },
-    {
-      q: "How do I obtain a DTCM event permit?",
-      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    },
-    {
-      q: "What information do I need to provide for the DTCM event permit application?",
-      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    },
-    {
-      q: "Can Perfetto Events assist with obtaining a DTCM event permit?",
-      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    },
-    {
-      q: "What happens if I do not obtain a DTCM event permit?",
-      a: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    },
-  ];
-
   const [faqOpen, setFaqOpen] = useState<number>(0);
   return (
     <div className="pt-24">
-      <section className="w-full ">
+      <section className="w-full pt-10 ">
         <div className="max-w-[102rem] mx-auto px-5 sm:px-6 py-8 lg:py-10 bg-[#FAF8F5]">
-          <div className="flex flex-col gap-6 lg:flex-row items-center lg:items-stretch rounded-2x p-6 sm:p-8 lg:p-20">
-            <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
-              <p className="inline-flex items-center gap-2 text-[#C4161C] uppercase text-[14px] tracking-[0.16em] font-light">
-                Contact us
-              </p>
+          <div className="flex flex-col gap-6 rounded-2x p-6 sm:p-8 lg:p-20">
+            <p className="inline-flex items-center justify-center lg:justify-start gap-2 text-[#C4161C] uppercase text-md tracking-[0.16em] font-light font-manrope">
+              Contact us
+            </p>
 
-              <h2 className="mt-4 text-[#00325B] font-medium leading-[1.05] text-[55px]">
-                Ready to Plan
-                <br />
-                an Event ?
-              </h2>
-            </div>
+            <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-12 items-center lg:items-start">
+              <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
+                <h2 className="mt-4 text-[#00325B] font-medium  text-4xl lg:text-6xl">
+                  Ready to Plan
+                  <br />
+                  an Event ?
+                </h2>
+              </div>
 
-            <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
-              <p className="text-[#4B5563] font-medium text-xl leading-[1.65] max-w-[746px]">
-                Every great event starts with organized details while executing
-                them brilliantly, We offer a variety of options to assist in
-                making your event as perfect as you have imagined it!
-              </p>
+              <div className="w-full lg:w-6/12 h-full text-center lg:text-left">
+                <p className="text-[#4B5563] font-normal text-xl leading-tight max-w-[746px]">
+                  Every great event starts with organized details while
+                  executing them brilliantly, We offer a variety of options to
+                  assist in making your event as perfect as you have imagined
+                  it!
+                </p>
 
-              <ul className="mt-6 lg:mt-8 flex justify-center lg:justify-start gap-4 sm:gap-6">
-                {[
-                  { Icon: FaInstagram, label: "Instagram" },
-                  { Icon: FaFacebookF, label: "Facebook" },
-                  { Icon: FaXTwitter, label: "X" },
-                  { Icon: FaLinkedinIn, label: "LinkedIn" },
-                ].map(({ Icon, label }, i) => (
-                  <li key={i}>
-                    <button
-                      aria-label={label}
-                      className="h-14 w-14 rounded-full border border-[#093b64] text-[#093b64] grid place-items-center text-[22px] transition-transform hover:scale-[1.03] active:scale-[0.98]"
-                    >
-                      <Icon />
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                <ul className="mt-6 lg:mt-8 flex justify-center lg:justify-start gap-4 sm:gap-6">
+                  {[
+                    { Icon: FaInstagram, label: "Instagram" },
+                    { Icon: FaFacebookF, label: "Facebook" },
+                    { Icon: FaXTwitter, label: "X" },
+                    { Icon: FaLinkedinIn, label: "LinkedIn" },
+                  ].map(({ Icon, label }, i) => (
+                    <li key={i}>
+                      <button
+                        aria-label={label}
+                        className="h-14 w-14 rounded-full border border-[#093b64] text-[#093b64] grid place-items-center text-[22px] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                      >
+                        <Icon />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>{" "}
       <section className="w-full my-20 px-6">
         <div className="mx-auto max-w-[102rem]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-24 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-24 gap-y-10">
             <div>
               <h3 className="text-[#00325B] text-[28px] font-medium">Phone</h3>
               <div className="mt-4 space-y-2 text-[#4B5563] text-[22px] font-medium">
@@ -139,7 +115,6 @@ export default function ContactPage() {
       <section className="w-full p-6">
         <div className="mx-auto max-w-[102rem]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:items-stretch">
-            {/* Image: aspect on small; stretch on lg */}
             <div
               className="relative overflow-hidden rounded-xl
                       aspect-[16/9] sm:aspect-[4/3]
@@ -154,7 +129,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Form card: stretch to same row height */}
             <div
               className="rounded-xl bg-[#FBF8F4] p-10 lg:p-16
                       flex flex-col justify-center
@@ -204,7 +178,7 @@ export default function ContactPage() {
       </section>
       <section className="w-full mt-10 mb-20">
         <div className="mx-auto max-w-[90rem] px-6 sm:px-8">
-          <h2 className="text-center text-[#00325B] text-[55px] font-semibold tracking-wide mb-12">
+          <h2 className="text-center text-[#00325B] text-5xl lg:text-6xl font-semibold tracking-wide mb-12">
             FAQ
           </h2>
 
@@ -225,8 +199,8 @@ export default function ContactPage() {
                     onClick={() => setFaqOpen(isOpen ? -1 : i)}
                     className="w-full flex items-center gap-4 px-7 py-6"
                   >
-                    <span className="flex-1 text-left text-[#00325B] text-lg sm:text-[30px] font-medium">
-                      {item.q}
+                    <span className="flex-1 text-left text-[#00325B] text-xl sm:text-2xl font-medium">
+                      {item.que}
                     </span>
 
                     <span
@@ -246,9 +220,9 @@ export default function ContactPage() {
                     ].join(" ")}
                   >
                     <div className="overflow-hidden">
-                      {item.a && (
-                        <p className="px-7 pb-6 text-[22px] leading-tight text-[#4B5563]">
-                          {item.a}
+                      {item.ans && (
+                        <p className="px-7 pb-6 text-xl lg:text-2xl text-[#4B5563]">
+                          {item.ans}
                         </p>
                       )}
                     </div>
