@@ -227,10 +227,11 @@ export default function GalleryPage() {
             className="absolute inset-0 bg-black/70"
             onClick={handleCloseModal}
           />
-          <div className="relative= w-full h-screen  overflow-hidden z-10 bg-black/80">
-            <div className="w-full max-w-[102rem] mx-auto pt-28">
-              <div className="flex flex-col md:flex-row">
-                <div className="relative h-[40vh] md:h-[60vh] md:w-1/2 w-full">
+
+          <div className="relative w-full h-screen z-10 bg-black/80 overflow-y-auto">
+            <div className="w-full max-w-[102rem] mx-auto pt-20 px-6 md:px-10">
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="relative h-[40vh] md:h-[70vh] md:w-1/2 w-full rounded-lg overflow-hidden">
                   <Image
                     src={`/images/gallery/${filteredGallery[modalIndex].src}`}
                     alt={filteredGallery[modalIndex].title}
@@ -239,36 +240,40 @@ export default function GalleryPage() {
                     priority
                   />
                 </div>
-                <div className="p-6 md:p-8 text-white backdrop-blur-sm md:w-1/2 w-full flex flex-col justify-start">
+
+                <div className="p-4 md:p-8 text-white backdrop-blur-sm md:w-1/2 w-full flex flex-col justify-start">
                   <p className="text-sm uppercase tracking-wide text-white/70 mb-2">
                     {filteredGallery[modalIndex].type}
                   </p>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-8">
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-6">
                     {filteredGallery[modalIndex].title}
                   </h3>
-                  <p className="text-base md:text-lg">
+                  <p className="text-base md:text-lg leading-relaxed">
                     {filteredGallery[modalIndex].desc}
                   </p>
                 </div>
               </div>
+
               <button
                 aria-label="Close"
-                className="absolute top-5 right-8 cursor-pointer inline-flex text-5xl  items-center justify-center rounded-full text-white "
+                className="absolute top-5 right-6 md:right-8 cursor-pointer inline-flex text-5xl items-center justify-center rounded-full text-white"
                 onClick={handleCloseModal}
               >
                 ×
               </button>
+
               <button
                 aria-label="Previous"
-                className="absolute left-8 top-1/2 cursor-pointer -translate-y-1/2 inline-flex items-center justify-center rounded-full  text-white "
+                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 cursor-pointer inline-flex items-center justify-center rounded-full text-white"
                 onClick={handlePrevModal}
                 disabled={modalIndex === 0}
               >
                 <FaChevronLeft className="h-8 w-8" />
               </button>
+
               <button
                 aria-label="Next"
-                className="absolute right-8 top-1/2 cursor-pointer -translate-y-1/2 inline-flex items-center justify-center rounded-full text-white"
+                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 cursor-pointer inline-flex items-center justify-center rounded-full text-white"
                 onClick={handleNextModal}
                 disabled={modalIndex === filteredGallery.length - 1}
               >
