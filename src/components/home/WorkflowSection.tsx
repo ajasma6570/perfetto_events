@@ -49,7 +49,7 @@ export default function WorkflowSection() {
           </Link>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="my-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
           {workflowSteps.map((item, index) => (
             <div
               key={index}
@@ -72,7 +72,7 @@ export default function WorkflowSection() {
 
         <Link
           href={"/contact"}
-          className="self-stretch mt-4 xl:hidden sm:self-auto border w-auto py-4 lg:py-6 px-7 lg:px-10 text-xl lg:text-2xl font-medium rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300"
+          className="self-stretch mt-10 xl:hidden sm:self-auto border w-auto py-4 lg:py-6 px-7 lg:px-10 text-xl lg:text-2xl font-medium rounded-full text-white border-white hover:bg-[#c4161c] hover:border-[#c4161c] transition-all duration-300"
         >
           Know the Process
         </Link>
