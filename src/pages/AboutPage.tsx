@@ -1,105 +1,18 @@
 import GetInTouch from "@/components/home/GetInTouch";
-import { cn } from "@/lib/utils";
-import { Manrope } from "next/font/google";
+import { clients, ourProcess, whyChooseUs } from "@/static-data/about";
 import Image from "next/image";
 import React from "react";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
 export default function AboutPage() {
-  const ourProcess = [
-    {
-      title: "Briefing",
-      body: "At this step, the best minds in the business huddle around a table to draw out the best plan for you. We are as invested in this as you are.",
-      icon: "icon-12.webp",
-    },
-    {
-      title: "Conceptualization",
-      body: "Our creative team transforms insights into ideas, mapping out themes, formats, and experiences that resonate. Every concept is tailored to your vision and brand identity.",
-      icon: "icon-13.webp",
-    },
-    {
-      title: "Planning",
-      body: "Here, creativity meets structure. From vendor selection and timelines to logistics and budgeting, we ensure every moving part is coordinated with precision.",
-      icon: "icon-14.webp",
-    },
-    {
-      title: "Execution",
-      body: "With the support of our partners, the work to breathe life into the event starts here. A smattering of pixie dust, we work tirelessly to ensure our clients are nothing short of amazed.",
-      icon: "icon-15.webp",
-    },
-    {
-      title: "Evaluation",
-      body: "A fine-toothed comb in hand, we make sure every little detail is on point. After all, everything has to be just Perfecto!",
-      icon: "icon-16.webp",
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: "icon-6.webp",
-      title: "Certified Experience",
-      desc: "Our portfolio is backed by years of expertise and proven excellence in delivering standout events.",
-    },
-    {
-      icon: "icon-7.webp",
-      title: "Great Support",
-      desc: "From concepts to logistics, our expert team provides unmatched support every step of the way.",
-    },
-    {
-      icon: "icon-8.webp",
-      title: "Memorable Events",
-      desc: "Through innovation and creativity, we create events that leave lasting impressions.",
-    },
-    {
-      icon: "icon-9.webp",
-      title: "Quality Service",
-      desc: "Dedicated to delivering high standards while ensuring cost-effectiveness and reliability.",
-    },
-    {
-      icon: "icon-10.webp",
-      title: "Success Guaranteed",
-      desc: "We measure success by delivering seamless results and exceeding expectations.",
-    },
-    {
-      icon: "icon-11.webp",
-      title: "Global Reach",
-      desc: "With international presence, we bring your brand’s story to life across borders.",
-    },
-  ];
-
-  let clients = [
-    "image-1.webp",
-    "image-2.webp",
-    "image-3.webp",
-    "image-4.webp",
-    "image-5.webp",
-    "image-6.webp",
-    "image-7.webp",
-    "image-8.webp",
-    "image-9.webp",
-    "image-10.webp",
-    "image-11.webp",
-    "image-12.webp",
-    "image-13.webp",
-    "image-14.webp",
-  ];
-
   return (
     <div className="pt-24 space-y-20 ">
       <div className="pt-24 flex justify-center flex-col px-6 items-center text-center space-y-4 max-w-6xl mx-auto">
         <p
-          className={cn(
-            "text-xl uppercase text-[#C4161C] font-light",
-            manrope.className
-          )}
+          className={"text-xl uppercase text-[#C4161C] font-light font-manrope"}
         >
           About us
         </p>
-        <h1 className="text-4xl lg:text-[55px] text-[#00325B] font-medium">
+        <h1 className="text-4xl lg:text-6xl text-[#00325B] font-medium">
           Crafting Experiences, Defining Moments
         </h1>
       </div>
@@ -123,7 +36,7 @@ export default function AboutPage() {
         <h2 className="text-4xl lg:text-5xl text-[#00325B] font-semibold text-center">
           Seamless Events, Enduring Impact
         </h2>
-        <ul className="p-5 space-y-8 text-center text-2xl mt-10">
+        <ul className="lg:p-5 space-y-8 text-center text-2xl mt-10">
           <li className="font-normal text-[#4B5563]">
             We believe that every brand has a special story to tell – one that
             is unique and personal. That’s where Perfetto Event Management steps
@@ -185,10 +98,9 @@ export default function AboutPage() {
       <section className="max-w-[102rem] mx-auto px-6 pb-16 lg:py-16 ">
         <div className="text-left  mb-12 space-y-8">
           <p
-            className={cn(
-              " inline-flex justify-start items-center w-full lg:w-5/12 gap-2 text-xl uppercase text-[#C4161C] font-light",
-              manrope.className
-            )}
+            className={
+              " inline-flex justify-start items-center w-full lg:w-5/12 gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
+            }
           >
             <span>
               <Image
@@ -203,7 +115,7 @@ export default function AboutPage() {
           <h2 className="text-4xl font-bold text-[#00325B] mt-2">
             The Perfetto Advantage
           </h2>
-          <p className="text-[#4B5563] text-2xl mt-4 font-normal">
+          <p className="text-[#4B5563] text-xl lg:text-2xl mt-4 font-normal">
             Perfetto Event Management takes pride in the fact that we are known
             for our hands-on <br className="hidden lg:block" /> and multifaceted
             approach when it comes to getting a job done. We have got it all to{" "}
@@ -212,9 +124,9 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="w-full flex mt-20">
-          <div className="hidden lg:block w-2/12"></div>
-          <div className="w-full lg:w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="w-full flex mt-10 lg:mt-20">
+          <div className="hidden xl:block w-2/12"></div>
+          <div className="w-full xl:w-10/12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="text-left p-6">
                 <div className="w-[108px] h-[108px] flex items-center justify-center border border-[#00325B] rounded-full mb-6">
@@ -230,7 +142,7 @@ export default function AboutPage() {
                   {item.title}
                 </h3>
 
-                <p className="text-[#4B5563] text-xl font-medium">
+                <p className="text-[#4B5563] text-xl font-normal">
                   {item.desc}
                 </p>
               </div>
@@ -245,10 +157,9 @@ export default function AboutPage() {
       >
         <div className="mx-auto max-w-[95rem] px-6 py-16 space-y-8">
           <p
-            className={cn(
-              " inline-flex justify-center items-center w-full  gap-2 text-xl uppercase text-[#C4161C] font-light",
-              manrope.className
-            )}
+            className={
+              " inline-flex justify-center items-center w-full  gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
+            }
           >
             <span>
               <Image
@@ -261,18 +172,18 @@ export default function AboutPage() {
             our services
           </p>
 
-          <h2 className="text-[55px] font-medium tracking-tight text-[#00325B] text-center">
+          <h2 className="text-5xl lg:text-6xl font-medium tracking-tight text-[#00325B] text-center">
             What Goes on Behind the Scenes
           </h2>
 
-          <p className="mt-3 font-normal text-center text-2xl mx-auto text-[#4B5563]">
+          <p className="mt-3 font-normal text-center text-xl lg:text-2xl mx-auto text-[#4B5563]">
             Every great event starts with organizing all the details, followed
             by the beautiful journey of executing them brilliantly. We offer a
             variety of options to help you make your event as perfect as you
             imagined it!
           </p>
 
-          <div className="mt-20">
+          <div className="mt-14 lg:mt-20">
             <ul role="list" className="space-y-8">
               {ourProcess.map((s) => (
                 <li
@@ -289,11 +200,11 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    <h3 className="text-[33px] font-medium leading-tight col-span-12 lg:col-span-3 text-[#00325B]">
+                    <h3 className="text-4xl font-medium leading-tight col-span-12 lg:col-span-3 text-[#00325B]">
                       {s.title}
                     </h3>
 
-                    <p className="text-[22px] leading-8 col-span-12 lg:col-span-7 text-[#4B5563]">
+                    <p className="text-2xl font-normal col-span-12 lg:col-span-7 text-[#4B5563]">
                       {s.body}
                     </p>
                   </div>
@@ -337,12 +248,11 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="clients-heading" className="py-12 px-6">
-        <div className="text-center">
+        <div className="text-center space-y-6">
           <p
-            className={cn(
-              " inline-flex justify-center items-center w-full gap-2 text-xl uppercase text-[#C4161C] font-light",
-              manrope.className
-            )}
+            className={
+              " inline-flex justify-center items-center w-full gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
+            }
           >
             <span>
               <Image
@@ -355,7 +265,7 @@ export default function AboutPage() {
             Clients
           </p>
 
-          <h2 className="text-[55px] font-medium tracking-tight text-[#00325B] text-center">
+          <h2 className="text-5xl lg:text-6xl font-medium tracking-tight text-[#00325B] text-center">
             Brands We’ve Worked With
           </h2>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import {
   FaInstagram,
@@ -18,6 +18,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const routes = [
     { name: "Home", path: "/" },
     { name: "What We Do", path: "/services" },
@@ -25,7 +27,6 @@ export default function Navbar() {
     { name: "Gallery", path: "/gallery" },
     { name: "Blog", path: "/blog" },
   ];
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -33,8 +34,23 @@ export default function Navbar() {
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        !(e.target as HTMLElement).closest("button") // ignore toggle button clicks
+      ) {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -112,11 +128,12 @@ export default function Navbar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              ref={menuRef}
               initial={{ y: "-80%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-80%", opacity: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="fixed inset-0 bg-[#174880] h-[90vh] flex flex-col justify-center items-center text-white space-y-6 text-3xl"
+              className="fixed inset-0 bg-[#174880] h-[80vh] lg:h-[90vh] flex flex-col justify-center items-center text-white space-y-6 text-3xl"
             >
               <ul className="space-y-6 text-center">
                 {routes.map((route) => (

@@ -124,19 +124,17 @@ export default async function Page(props: Props) {
   }
 
   return (
-    <div className="pt-24 space-y-20">
-      <div className="pt-24 flex justify-center flex-col items-center  max-w-[102rem] mx-auto mb-20">
-        <p
-          className={cn(
-            "text-lg w-full max-w-2xl text-left text-[#4E4E4E]",
-            manrope.className
-          )}
-        >
+    <div className="pt-14 lg:pt-24 space-y-20">
+      <div className="pt-24 flex justify-center flex-col items-center max-w-[102rem] mx-auto mb-20 px-6">
+        <p className="text-lg w-full max-w-4xl text-left text-[#4E4E4E]">
           Events | {blog.date}
         </p>
-        <h1 className="text-3xl font-bold max-w-2xl mt-4">{blog.title}</h1>
+        <h1 className="text-3xl text-left font-bold w-full max-w-4xl mt-4 text-[#001A2E]">
+          {blog.title}
+        </h1>
 
-        <div className="h-[400px] w-[800px] max-w-[102rem] relative mt-12">
+        {/* Image wrapper */}
+        <div className="relative w-full max-w-5xl h-[250px] sm:h-[350px] md:h-[400px] mt-12">
           <Image
             src={`/images/blog/${blog.src}`}
             alt={blog.title}
@@ -144,14 +142,15 @@ export default async function Page(props: Props) {
             className="object-cover rounded-lg"
           />
         </div>
-        <p className="text-lg max-w-2xl mt-12 text-[#4B5563]">
+
+        <p className="text-lg max-w-4xl mt-12 text-[#4B5563] font-normal">
           {blog.description}
         </p>
 
-        <div className="mt-10 flex gap-4 max-w-2xl w-full items-center bg-[#FAF8F5] p-8">
+        <div className="mt-10 flex gap-4 max-w-4xl w-full items-center bg-[#FAF8F5] p-8">
           <span className="text-2xl text-[#4B5563]">Share it on: </span>
           <div className="flex gap-8 text-[#00325B]">
-            <FaFacebookF size={20} /> <FaXTwitter size={20} />{" "}
+            <FaFacebookF size={20} /> <FaXTwitter size={20} />
             <FaInstagram size={20} /> <FaLinkedinIn size={20} />
           </div>
         </div>
