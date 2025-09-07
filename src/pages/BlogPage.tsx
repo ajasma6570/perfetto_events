@@ -16,7 +16,7 @@ const manrope = Manrope({
 export default function BlogPage() {
   const router = useRouter();
 
-  function handleBlogClick(blogId: number) {
+  function handleBlogClick(blogId: string) {
     router.push(`/blog/${blogId}`);
   }
 
@@ -40,7 +40,7 @@ export default function BlogPage() {
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            onClick={() => handleBlogClick(blog.id)}
+            onClick={() => handleBlogClick(blog.slug)}
             className="p-4 flex flex-col relative group overflow-hidden cursor-pointer"
           >
             <div className="relative w-full overflow-hidden rounded-xl aspect-[16/9]">
@@ -62,7 +62,7 @@ export default function BlogPage() {
             <div className="mt-auto flex flex-col items-start space-y-2.5 pt-2">
               <p className="text-[22px] text-[#4E4E4E]">Events | {blog.date}</p>
               <button
-                onClick={() => handleBlogClick(blog.id)}
+                onClick={() => handleBlogClick(blog.slug)}
                 className="self-start border border-[#F7931E] cursor-pointer text-[#001A2E] px-5 lg:px-10 py-3 rounded-full group-hover:text-white group-hover:bg-[#c4161c] group-hover:border-[#c4161c] transform transition-all duration-300"
               >
                 Read More

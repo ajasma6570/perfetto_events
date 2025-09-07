@@ -244,13 +244,13 @@ export default function servicesPage() {
                 </p>
               </div>
 
-              <div className="lg:hidden items-center my-6 justify-start w-full flex gap-8">
-                <button className="border px-5 py-2 rounded-full border-[#F7931E] text-[#00325B] font-normal text-2xl">
+              <div className="lg:hidden items-center my-6 justify-start w-full flex gap-4 lg:gap-8">
+                <button className="border px-5 py-2 rounded-full border-[#F7931E] text-[#00325B] font-normal text-xl lg:text-2xl">
                   View work
                 </button>
                 <Link
                   href="/contact"
-                  className="border px-5 py-2 rounded-full border-[#F7931E] text-[#00325B] font-normal text-2xl"
+                  className="border px-5 py-2 rounded-full border-[#F7931E] text-[#00325B] font-normal text-xl lg:text-2xl"
                 >
                   Contact us
                 </Link>
