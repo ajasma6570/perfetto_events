@@ -8,25 +8,11 @@ import Link from "next/link";
 
 export default function Hero() {
   const desktopImages = ["intro.webp", "intro-2.webp", "intro-3.webp"];
-  const mobileImages = ["intro-sm.webp", "intro-sm-2.webp", "intro-sm-3.webp"];
+  // const mobileImages = ["intro-sm.webp", "intro-sm-2.webp", "intro-sm-3.webp"];
 
   const [images, setImages] = useState(desktopImages);
   const [current, setCurrent] = useState(0);
   const [firstLoad, setFirstLoad] = useState(true);
-
-  useEffect(() => {
-    const updateImages = () => {
-      if (window.innerWidth < 768) {
-        setImages(mobileImages);
-      } else {
-        setImages(desktopImages);
-      }
-    };
-
-    updateImages();
-    window.addEventListener("resize", updateImages);
-    return () => window.removeEventListener("resize", updateImages);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,7 +27,7 @@ export default function Hero() {
       <AnimatePresence>
         <motion.div
           key={images[current]}
-          className="absolute inset-0 bg-cover bg-center bg-black"
+          className="absolute inset-0 bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: `url(/images/home/${images[current]})` }}
           initial={firstLoad ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
