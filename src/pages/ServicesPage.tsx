@@ -62,7 +62,7 @@ export default function servicesPage() {
 
   const [expanded, setExpanded] = useState<number | null>(null);
   return (
-    <div className="pt-24  space-y-20">
+    <div className="pt-10 lg:pt-24  space-y-20">
       <div className="pt-24 px-6 flex justify-center flex-col items-center text-center space-y-4 max-w-6xl mx-auto">
         <p
           className={"text-xl uppercase text-[#C4161C] font-light font-manrope"}

@@ -21,7 +21,7 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="pt-24 space-y-20">
+    <div className="pt-10 lg:pt-24 space-y-20">
       <div className="pt-24 flex justify-center flex-col items-center text-center space-y-4 mx-auto px-6">
         <p
           className={cn(
