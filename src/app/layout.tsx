@@ -41,7 +41,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/home/intro-sm.webp"
+          href="/images/logo.webp"
           type="image/webp"
           fetchPriority="high"
         ></link>
