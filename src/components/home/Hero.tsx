@@ -41,20 +41,14 @@ export default function Hero() {
       <AnimatePresence>
         <motion.div
           key={images[current]}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center bg-black"
+          style={{ backgroundImage: `url(/images/home/${images[current]})` }}
           initial={firstLoad ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0.5 }}
           transition={{ duration: 3, ease: "easeInOut" }}
         >
-          <Image
-            src={`/images/home/${images[current]}`}
-            alt={`${images[current]} image`}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/40" />
         </motion.div>
       </AnimatePresence>
 
