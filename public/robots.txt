@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://perfettoevents.ae
+
+# Sitemaps
+Sitemap: https://perfettoevents.ae/sitemap.xml
