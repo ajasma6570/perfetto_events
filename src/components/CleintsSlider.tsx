@@ -73,6 +73,7 @@ export default function ClientScroller() {
               alt={`Client ${index + 1}`}
               width={130}
               height={130}
+              style={{ width: "auto", height: "auto" }}
               className="object-contain"
             />
           </div>

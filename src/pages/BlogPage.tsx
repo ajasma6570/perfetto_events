@@ -41,7 +41,7 @@ export default function BlogPage() {
           <div
             key={blog.id}
             onClick={() => handleBlogClick(blog.slug)}
-            className="p-4 flex flex-col relative group overflow-hidden cursor-pointer hover:shadow-xl rounded-2xl"
+            className="p-4 flex flex-col relative group overflow-hidden cursor-pointer md:hover:shadow-xl rounded-2xl"
           >
             <div className="relative w-full overflow-hidden rounded-xl aspect-[16/9]">
               <Image
@@ -52,7 +52,7 @@ export default function BlogPage() {
                 sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
                 priority={false}
               />
-              <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>{" "}
+              <div className="absolute hidden md:block bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>{" "}
             </div>
 
             <h3 className="text-xl sm:text-2xl lg:text-[28px] leading-tight font-medium mt-2 text-[#001A2E]">

@@ -108,9 +108,9 @@ export default function GalleryPage() {
                   src={`/images/gallery/${item.src}`}
                   alt={item.title}
                   fill
-                  loading="lazy"
                   className="object-fill transform transition-all duration-500 ease-in-out group-hover:scale-110"
                   sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                  priority
                 />
 
                 <div className="absolute bottom-0 gap-2 left-0 w-full h-[50%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-start justify-end px-5 pb-8">

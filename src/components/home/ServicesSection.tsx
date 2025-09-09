@@ -45,12 +45,13 @@ export default function ServicesOverview() {
             "inline-flex justify-start items-center w-full xl:w-5/12 gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
           }
         >
-          <span>
+          <span className="relative w-5 h-6">
             <Image
               src="/images/logo-inline.webp"
               alt="Logo"
-              width={16}
-              height={16}
+              fill
+              sizes="24px"
+              className="object-contain"
             />
           </span>
           our services

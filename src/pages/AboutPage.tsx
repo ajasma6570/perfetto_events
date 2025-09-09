@@ -102,12 +102,13 @@ export default function AboutPage() {
               " inline-flex justify-start items-center w-full lg:w-5/12 gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
             }
           >
-            <span>
+            <span className="relative w-5 h-6">
               <Image
                 src="/images/logo-inline.webp"
                 alt="Logo"
-                width={16}
-                height={16}
+                fill
+                sizes="24px"
+                className="object-contain"
               />
             </span>
             Why choose us
@@ -161,12 +162,13 @@ export default function AboutPage() {
               " inline-flex justify-center items-center w-full  gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
             }
           >
-            <span>
+            <span className="relative w-5 h-6">
               <Image
                 src="/images/logo-inline.webp"
                 alt="Logo"
-                width={16}
-                height={16}
+                fill
+                sizes="24px"
+                className="object-contain"
               />
             </span>
             our services
@@ -197,6 +199,7 @@ export default function AboutPage() {
                         alt={s.title}
                         height={50}
                         width={50}
+                        style={{ width: "auto", height: "auto" }}
                       />
                     </div>
 
@@ -254,12 +257,13 @@ export default function AboutPage() {
               " inline-flex justify-center items-center w-full gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
             }
           >
-            <span>
+            <span className="relative w-5 h-6">
               <Image
                 src="/images/logo-inline.webp"
                 alt="Logo"
-                width={16}
-                height={16}
+                fill
+                sizes="24px"
+                className="object-contain"
               />
             </span>
             Clients

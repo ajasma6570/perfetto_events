@@ -65,6 +65,7 @@ export default function Navbar() {
                   alt="Logo"
                   fill
                   priority
+                  sizes="(max-width: 768px) 150px, (max-width: 1024px) 180px, 205px"
                   className="object-contain"
                 />
               </div>

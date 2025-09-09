@@ -6,26 +6,50 @@ import Link from "next/link";
 
 export default function HighlightSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [translate, setTranslate] = useState(0);
   const [direction, setDirection] = useState(-1);
   const [maxScroll, setMaxScroll] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [allLoaded, setAllLoaded] = useState(false);
+  const [inView, setInView] = useState(false);
+
+  const images = [
+    { src: "vector-4.webp", width: 600, height: 700 },
+    { src: "vector-5.webp", width: 900, height: 700 },
+    { src: "vector-6.webp", width: 600, height: 700 },
+    { src: "vector-7.webp", width: 900, height: 700 },
+  ];
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      const parentWidth = container.parentElement?.offsetWidth || 0;
-      setMaxScroll(container.scrollWidth - parentWidth);
-    }
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
+    if (imagesLoaded === images.length) {
+      setAllLoaded(true);
+      const container = containerRef.current;
+      if (container) {
+        const parentWidth = container.parentElement?.offsetWidth || 0;
+        setMaxScroll(container.scrollWidth - parentWidth);
+      }
+    }
+  }, [imagesLoaded, images.length]);
+
+  useEffect(() => {
+    if (!allLoaded || !inView) return;
     let frame: number;
     const speed = 1.5;
-
     const animate = () => {
       setTranslate((prev) => {
         let next = prev + direction * speed;
-
         if (next <= -maxScroll) {
           setDirection(1);
           next = -maxScroll;
@@ -35,35 +59,27 @@ export default function HighlightSection() {
         }
         return next;
       });
-
       frame = requestAnimationFrame(animate);
     };
-
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
-  }, [direction, maxScroll]);
-
-  const images = [
-    { src: "vector-4.webp", width: 600, height: 700 },
-    { src: "vector-5.webp", width: 900, height: 700 },
-    { src: "vector-6.webp", width: 600, height: 700 },
-    { src: "vector-7.webp", width: 900, height: 700 },
-  ];
+  }, [direction, maxScroll, allLoaded, inView]);
 
   return (
-    <section className="pb-20">
+    <section ref={sectionRef} className="pb-20">
       <div className="max-w-[102rem] w-full mx-auto space-y-8 px-5 sm:px-6">
         <p
           className={
             " inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center mt-20 font-manrope"
           }
         >
-          <span>
+          <span className="relative w-5 h-6">
             <Image
               src="/images/logo-inline.webp"
               alt="Logo"
-              width={16}
-              height={16}
+              fill
+              sizes="24px"
+              className="object-contain"
             />
           </span>
           Gallery
@@ -101,7 +117,9 @@ export default function HighlightSection() {
                   alt={`Gallery ${i + 1}`}
                   height={item.height}
                   width={item.width}
-                  className="object-cover  "
+                  className="object-cover"
+                  style={{ height: "auto", width: "auto" }}
+                  onLoad={() => setImagesLoaded((c) => c + 1)}
                 />
               </div>
             ))}

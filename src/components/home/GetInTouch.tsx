@@ -10,6 +10,7 @@ export default function GetInTouch() {
         alt="Background"
         fill
         priority
+        sizes="(min-width: 1024px) 100vw, 0px"
         className="object-cover object-center hidden lg:block"
       />
 
@@ -18,6 +19,7 @@ export default function GetInTouch() {
         alt="Background"
         fill
         priority
+        sizes="(max-width: 1024px) 100vw, 0px"
         className="object-cover object-center lg:hidden"
       />
 

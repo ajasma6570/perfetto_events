@@ -15,6 +15,7 @@ export default function ProcessSection({
             src="/images/services/vector.webp"
             alt="Service Image"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40  px-6">
@@ -33,6 +34,7 @@ export default function ProcessSection({
             src="/images/services/vector.webp"
             alt="Service Image"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40  px-6">
@@ -54,6 +56,7 @@ export default function ProcessSection({
           src="/images/services/vector-1.webp"
           alt="Service Image"
           fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40  px-6">

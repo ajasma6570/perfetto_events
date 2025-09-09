@@ -8,19 +8,22 @@ export default function BlogSection() {
   return (
     <section className="bg-[#FAF8F5] pb-20">
       <div className="mx-auto max-w-[102rem] px-4 sm:px-6 py-12 sm:py-16">
-        <div
+        <p
           className={
-            "inline-flex justify-start w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light mt-20 font-manrope"
+            "inline-flex justify-start items-center w-full xl:w-5/12 gap-2 text-xl uppercase text-[#C4161C] font-light font-manrope"
           }
         >
-          <Image
-            src="/images/logo-inline.webp"
-            alt="Logo"
-            width={16}
-            height={16}
-          />
-          <span>Blog</span>
-        </div>
+          <span className="relative w-5 h-6">
+            <Image
+              src="/images/logo-inline.webp"
+              alt="Logo"
+              fill
+              sizes="24px"
+              className="object-contain"
+            />
+          </span>
+          Blog
+        </p>
 
         <h2 className="text-5xl lg:text-[55px] text-[#00325B] font-medium md:text-center lg:-translate-y-12">
           Event Trends, Tips & Stories
@@ -44,6 +47,7 @@ export default function BlogSection() {
                 alt={item.title}
                 fill
                 className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw"
               />
               <div className="pointer-events-none absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>

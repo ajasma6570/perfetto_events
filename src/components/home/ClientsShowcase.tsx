@@ -44,6 +44,7 @@ export default function ClientsShowcase() {
                 alt={`Client ${index + 1}`}
                 height={130}
                 width={130}
+                style={{ width: "auto", height: "auto" }}
                 className="object-contain"
               />
             </div>

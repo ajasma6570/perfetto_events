@@ -138,6 +138,7 @@ export default function servicesPage() {
               src="/images/services/vector-2.webp"
               alt="Vector Icon"
               fill
+              sizes="(min-width: 768px) 144px, 96px"
               className="object-contain"
             />
           </div>
@@ -166,9 +167,10 @@ export default function servicesPage() {
                   src={`/images/services/${event.src}`}
                   alt={event.title}
                   fill
-                  className="object-cover hover:scale-110 transform transition-all duration-500 ease-in-out"
+                  className="object-cover md:hover:scale-110 transform transition-all duration-500 ease-in-out"
+                  sizes="(min-width:1024px) 50vw, 100vw"
                 />
-                <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-start gap-6 px-5 pb-10">
+                <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full md:group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-start gap-6 px-5 pb-10">
                   <button className="text-white px-5 py-2 rounded-full border border-white text-2xl font-medium">
                     View work
                   </button>
@@ -250,6 +252,7 @@ export default function servicesPage() {
               src="/images/services/vector-3.webp"
               alt="Vector Icon"
               fill
+              sizes="(min-width: 768px) 144px, 96px"
               className="object-contain"
             />
           </div>

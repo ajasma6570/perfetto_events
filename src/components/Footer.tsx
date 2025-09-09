@@ -22,6 +22,9 @@ export default function Footer() {
           alt="Perfetto logo"
           width={230}
           height={69}
+          sizes="(max-width: 768px) 150px, (max-width: 1024px) 200px, 230px"
+          className="object-contain"
+          style={{ width: "auto", height: "auto" }}
           priority
         />
       </div>

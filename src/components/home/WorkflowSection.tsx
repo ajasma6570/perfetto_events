@@ -11,6 +11,7 @@ export default function WorkflowSection() {
         alt="Background"
         fill
         priority
+        sizes="(min-width: 768px) 100vw, 0px"
         className="object-cover object-center md:block hidden"
       />
       <Image
@@ -18,6 +19,7 @@ export default function WorkflowSection() {
         alt="Background"
         fill
         priority
+        sizes="(max-width: 768px) 100vw, 0px"
         className="object-cover object-center md:hidden block"
       />
 
@@ -27,12 +29,13 @@ export default function WorkflowSection() {
             " inline-flex justify-start items-center w-5/12 gap-2 text-xl uppercase text-white font-light font-manrope"
           }
         >
-          <span>
+          <span className="relative w-5 h-6">
             <Image
               src="/images/logo-inline.webp"
               alt="Logo"
-              width={16}
-              height={16}
+              fill
+              sizes="24px"
+              className="object-contain"
             />
           </span>
           What we do
@@ -53,7 +56,7 @@ export default function WorkflowSection() {
           {workflowSteps.map((item, index) => (
             <div
               key={index}
-              className="rounded-2xl border border-white group hover:border-white/10 hover:bg-white/10  hover:backdrop-blur-sm flex flex-col justify-center items-center text-center p-6 sm:p-7 min-h-[210px] sm:min-h-[298px] transform transition-all duration-300"
+              className="rounded-2xl border border-white md:group md:hover:border-white/10 md:hover:bg-white/10  md:hover:backdrop-blur-sm flex flex-col justify-center items-center text-center p-6 sm:p-7 min-h-[210px] sm:min-h-[298px] transform transition-all duration-300"
             >
               <div className="h-16 w-16 sm:h-20 sm:w-20 border group-hover:bg-[#F7A41E] group-hover:border-[#F7A41E] border-white rounded-full flex items-center justify-center transform transition-all duration-300">
                 <Image
@@ -61,6 +64,8 @@ export default function WorkflowSection() {
                   alt={`${item.title} Icon`}
                   height={55}
                   width={55}
+                  sizes="55px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
               <p className="mt-4 sm:mt-5 text-white font-medium text-xl sm:text-2xl">

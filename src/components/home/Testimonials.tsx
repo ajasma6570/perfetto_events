@@ -21,12 +21,13 @@ export default function Testimonials() {
           " inline-flex justify-center w-full items-center gap-2 text-xl uppercase text-[#C4161C] font-light text-center font-manrope"
         }
       >
-        <span>
+        <span className="relative w-5 h-6">
           <Image
             src="/images/logo-inline.webp"
             alt="Logo"
-            width={16}
-            height={16}
+            fill
+            sizes="24px"
+            className="object-contain"
           />
         </span>
         Testimonials
@@ -84,6 +85,7 @@ export default function Testimonials() {
                 alt="Client Event"
                 fill
                 className="object-cover"
+                sizes="100vw"
               />
             </div>
           </div>
@@ -129,6 +131,7 @@ export default function Testimonials() {
                   alt="Client Event"
                   fill
                   className="object-cover"
+                  sizes="(min-width:1280px) 33vw, 100vw"
                 />
               </div>
             </div>
@@ -178,6 +181,7 @@ export default function Testimonials() {
                   alt="Client Event"
                   fill
                   className="object-cover"
+                  sizes="(min-width:1280px) 33vw, 100vw"
                 />
               </div>
             </div>

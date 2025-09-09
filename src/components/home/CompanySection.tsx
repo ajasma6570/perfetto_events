@@ -8,6 +8,15 @@ import { cn } from "@/lib/utils";
 export default function CompanyOverview() {
   const [hovered, setHovered] = useState(false);
 
+  const handleMouseEnter = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768)
+      setHovered(true);
+  };
+  const handleMouseLeave = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768)
+      setHovered(false);
+  };
+
   return (
     <section
       className={`h-full pt-20 pb-10 transition-colors duration-500 px-5 sm:px-6 ${
@@ -60,8 +69,8 @@ export default function CompanyOverview() {
             exit={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             className="absolute bottom-5 right-5 cursor-pointer"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <Image
               src={

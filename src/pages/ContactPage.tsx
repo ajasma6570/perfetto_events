@@ -126,6 +126,7 @@ export default function ContactPage() {
                 fill
                 className="object-cover"
                 loading="lazy"
+                sizes="(min-width:1024px) 50vw, 100vw"
               />
             </div>
 

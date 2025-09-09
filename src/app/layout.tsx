@@ -38,13 +38,6 @@ export default function RootLayout({
           type="image/webp"
           fetchPriority="high"
         ></link>
-        <link
-          rel="preload"
-          as="image"
-          href="/images/logo.webp"
-          type="image/webp"
-          fetchPriority="high"
-        ></link>
       </head>
       <body
         className={`${albertSans.variable} ${manrope.variable} font-albert-sans antialiased relative`}
