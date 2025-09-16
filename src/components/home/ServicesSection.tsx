@@ -143,8 +143,8 @@ export default function ServicesOverview() {
                     height={571}
                     className="object-cover rounded-xl h-[419px] w-full transform transition-all duration-500 lg:group-hover:h-full"
                   />
-                  <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500" />
-                  <p className="hidden lg:block absolute top-[450px] w-full lg:text-center text-2xl xl:text-4xl font-medium lg:px-8 transform transition-all duration-500 lg:group-hover:-translate-y-5 lg:group-hover:text-white">
+                  <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#C4161C] to-transparent opacity-0 translate-y-full lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500" />
+                  <p className="hidden md:block absolute top-[450px] w-full lg:text-center text-2xl xl:text-4xl font-medium lg:px-8 transform transition-all duration-500 lg:group-hover:-translate-y-5 lg:group-hover:text-white">
                     {service.title}
                   </p>
                 </div>

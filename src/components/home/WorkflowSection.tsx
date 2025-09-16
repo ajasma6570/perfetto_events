@@ -65,7 +65,7 @@ export default function WorkflowSection() {
                   height={55}
                   width={55}
                   sizes="55px"
-                  style={{ width: "auto", height: "auto" }}
+                  className="p-1"
                 />
               </div>
               <p className="mt-4 sm:mt-5 text-white font-medium text-xl sm:text-2xl">
