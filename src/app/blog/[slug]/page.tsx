@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { blogs } from "@/static-data/blogs";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -133,7 +134,6 @@ export default async function Page(props: Props) {
           {blog.title}
         </h1>
 
-        {/* Image wrapper */}
         <div className="relative w-full max-w-5xl h-[250px] sm:h-[350px] md:h-[400px] mt-12">
           <Image
             src={`/images/blog/${blog.src}`}
@@ -148,10 +148,22 @@ export default async function Page(props: Props) {
         </p>
 
         <div className="mt-10 flex gap-4 max-w-4xl w-full items-center bg-[#FAF8F5] p-8">
-          <span className="text-2xl text-[#4B5563]">Share it on: </span>
+          <span className="text-lg sm:text-xl text-[#4B5563]">
+            Share it on:{" "}
+          </span>
           <div className="flex gap-8 text-[#00325B]">
-            <FaFacebookF size={20} /> <FaXTwitter size={20} />
-            <FaInstagram size={20} /> <FaLinkedinIn size={20} />
+            <Link href="#" target="_blank">
+              <FaFacebookF className="text-lg sm:text-xl" />
+            </Link>
+            <Link href="#" target="_blank">
+              <FaXTwitter className="text-xl" />
+            </Link>
+            <Link href="#" target="_blank">
+              <FaInstagram className="text-xl" />
+            </Link>
+            <Link href="#" target="_blank">
+              <FaLinkedinIn className="text-xl" />
+            </Link>
           </div>
         </div>
       </div>

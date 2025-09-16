@@ -64,10 +64,14 @@ export default function AboutPage() {
       >
         <div className="flex justify-center items-center gap-10  font-semibold text-[#00325B]">
           <span className="sr-only">75+ Clients</span>
-          <p className="text-3xl lg:text-[40px] font-medium">75+ Clients</p>
+          <p className="text-2xl sm:text-4xl lg:text-5xl font-medium">
+            75+ Clients
+          </p>
           <span className="w-[4px] h-8 bg-[#00325B] hidden lg:block" />
           <span className="sr-only">600+ Events</span>
-          <p className="text-3xl lg:text-[40px] font-medium">600+ Events</p>
+          <p className="text-2xl sm:text-4xl lg:text-5xl font-medium">
+            600+ Events
+          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 lg:gap-6">

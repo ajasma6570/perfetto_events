@@ -7,10 +7,14 @@ import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
 export default function Hero() {
-  const desktopImages = ["intro.webp", "intro-2.webp", "intro-3.webp"];
+  // const desktopImages = ["intro.webp", "intro-2.webp", "intro-3.webp"];
   // const mobileImages = ["intro-sm.webp", "intro-sm-2.webp", "intro-sm-3.webp"];
 
-  const [images, setImages] = useState(desktopImages);
+  const [images, setImages] = useState([
+    "intro.webp",
+    "intro-2.webp",
+    "intro-3.webp",
+  ]);
   const [current, setCurrent] = useState(0);
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -18,7 +22,7 @@ export default function Hero() {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
       setFirstLoad(false);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [images]);
 
@@ -38,7 +42,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <section className="relative z-20 flex flex-col min-h-screen max-w-7xl mx-auto px-5 sm:px-6">
+      <section className="relative z-20 flex flex-col min-h-screen max-w-[102rem] mx-auto px-5 sm:px-6 2xl:px-0">
         <div className="flex flex-1 flex-col justify-center items-start md:items-center md:text-center w-full space-y-10 pt-40 md:pt-20">
           <h1 className="text-[#FFA616] font-manrope text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-semibold leading-tight flex flex-col">
             <span className="tracking-tighter  md:-translate-x-24 lg:-translate-x-30 xl:-translate-x-30 2xl:-translate-x-36">

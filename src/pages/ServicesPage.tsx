@@ -213,10 +213,10 @@ export default function servicesPage() {
             </p>
 
             <div className="flex flex-col gap-6">
-              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium text-xl xl:text-2xl">
+              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium whitespace-nowrap text-xl xl:text-2xl">
                 Book Your Free Consultation
               </button>
-              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium text-xl xl:text-2xl">
+              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium whitespace-nowrap text-xl xl:text-2xl">
                 Get in Touch
               </button>
             </div>
@@ -315,10 +315,10 @@ export default function servicesPage() {
               Feel free to contact us.
             </p>
             <div className="flex lg:flex-row flex-col gap-4">
-              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium text-xl lg:text-2xl">
+              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium text-xl whitespace-nowrap lg:text-2xl">
                 Book Your Free Consultation
               </button>
-              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium text-xl lg:text-2xl">
+              <button className="self-start border w-auto py-4 lg:py-6 px-7 lg:px-10 rounded-full border-[#F7931E] text-[#00325B] font-medium whitespace-nowrap text-xl lg:text-2xl">
                 Get in Touch
               </button>
             </div>
